@@ -8,9 +8,7 @@ Tags: magazine
 */
 
 
-/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
--------------------------------------------------------------- */
-
+/** Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,3 +52,28 @@ table {
 a img {
 	border: none;
 }
+/* end Reset */
+
+/** Layout, regions */
+body {
+  background: #fff;
+  color: #000;
+}
+/* end Layout, regions */
+
+/* Links */
+a         { text-decoration: none; }
+a:link    { color: #f39a00; }
+a:visited { color: #f39a00; }
+a:hover,
+a:focus   { color: #f39a00; text-decoration: underline; }
+a:active  { color: #f39a00; }
+/* end Links */
+
+/** Menu */
+.primary-menu li,
+.secondary-menu li { display: inline; }
+/* end Menu */
+
+/** Media Queries */
+/* end Media Queries */
