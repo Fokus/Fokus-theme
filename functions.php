@@ -24,6 +24,14 @@ function fokus_setup() {
 	// Feed support
 	add_theme_support( 'automatic-feed-links' );
 
+	// Register sidebars
+	$zones = array(
+		$main_article => array('name' => 'Front-main'),
+	);
+	foreach ( $zones as $zone ) {
+		register_sidebar( $zone );
+	}
+
 	// Menus
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'fokus' ),

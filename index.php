@@ -48,8 +48,8 @@
 
 		<?php
 		if ( have_posts() ) :
-			if ( is_page() && is_front_page()):
-				//TODO: Awesomeness!
+			if ( is_page() && is_front_page() ):
+				dynamic_sidebar('Front-main');
 			else:
 				$heading_tag = ($heading_tag == 'h1' ? 'h2' : 'h1');
 				?><div class="hfeed"><?php
