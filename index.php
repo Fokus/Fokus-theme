@@ -47,31 +47,53 @@
 		</div><!-- .header -->
 
 		<?php
-		if (have_posts()) :
-			$heading_tag = ($heading_tag == 'h1' ? 'h2' : 'h1');
-			?><div class="hfeed"><?php
-			while (have_posts()) :
-				the_post();
-				?>
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<<?php echo $heading_tag; ?> class="entry-title">
-						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-					</<?php echo $heading_tag; ?>>
+		if ( have_posts() ) :
+			if ( is_page() && is_front_page()):
+				//TODO: Awesomeness!
+			else:
+				$heading_tag = ($heading_tag == 'h1' ? 'h2' : 'h1');
+				?><div class="hfeed"><?php
+				while ( have_posts() ) :
+					the_post();
+					?>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<<?php echo $heading_tag; ?> class="entry-title">
+							<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+						</<?php echo $heading_tag; ?>>
 
-					<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
-						<div class="entry-summary">
-							<?php the_excerpt(); ?>
-						</div><!-- .entry-summary -->
-					<?php else : ?>
-						<div class="entry-content">
-							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?>
-							<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
-						</div><!-- .entry-content -->
-					<?php endif; ?>
-				</div>
-				<?php
-			endwhile;
-			?></div><?php
+						<div class="entry-meta">
+							<span class="author vcard">
+								<?php
+									printf( __( 'By: %1$s', 'fokus' ),
+										sprintf( '<a class="url fn n" href="%1$s" >%2$s</a>',
+											get_author_posts_url( get_the_author_meta( 'ID' ) ),
+											get_the_author()
+										)
+									);
+								?>
+							</span>
+							<span class="published">
+								<span class="value-title" title="<?php esc_attr_e(get_the_date('c')); ?>">
+									<?php echo get_the_date(); ?> <?php the_time(); ?>
+								</span>
+							</span>
+						</div><!-- .entry-meta -->
+
+						<?php if ( is_singular() ) : // Only display excerpts for archives and search. ?>
+							<div class="entry-content">
+								<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fokus' ) ); ?>
+								<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'fokus' ), 'after' => '</div>' ) ); ?>
+							</div><!-- .entry-content -->
+						<?php else : ?>
+							<div class="entry-summary">
+								<?php the_excerpt(); ?>
+							</div><!-- .entry-summary -->
+						<?php endif; ?>
+					</div>
+					<?php
+				endwhile;
+				?></div><?php
+			endif;
 		endif;
 		?>
 

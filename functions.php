@@ -21,6 +21,9 @@ function fokus_setup() {
 	// Post thumbs
 	add_theme_support( 'post-thumbnails' );
 
+	// Feed support
+	add_theme_support( 'automatic-feed-links' );
+
 	// Menus
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'fokus' ),
