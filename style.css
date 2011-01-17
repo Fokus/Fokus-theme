@@ -63,16 +63,27 @@ body {
 
 /* Links */
 a         { text-decoration: none; }
-a:link    { color: #f39a00; }
-a:visited { color: #f39a00; }
+a:link    { color: #e02802; }
+a:visited { color: #e02802; }
 a:hover,
-a:focus   { color: #f39a00; text-decoration: underline; }
-a:active  { color: #f39a00; }
+a:focus   { color: #e02802; text-decoration: underline; }
+a:active  { color: #e02802; }
 /* end Links */
 
 /** Menu */
 .primary-menu li,
-.secondary-menu li { display: inline; }
+.secondary-menu li {
+  display: inline;
+  font: 12px/22px Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.primary-menu li a { padding: 6px 5px; text-transform: uppercase; white-space: nowrap; }
+.secondary-menu li a { padding: 2px 5px; white-space: nowrap; }
+.primary-menu li a { background: #000; color: #FFF; }
+.primary-menu li.current-menu-item a { background: #e02802; color: #FFF;  }
+.primary-menu li a:hover { background: #999; color: #FFF;  }
+.secondary-menu li a { background: #CDCDCD; color: #000; }
+.secondary-menu li.current-menu-item a { background: #ffdf12; color: #000;  }
+.secondary-menu li a:hover {  color: #e02802;  }
 /* end Menu */
 
 /** Media Queries */

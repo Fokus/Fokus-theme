@@ -62,11 +62,51 @@ if ($fokus_colors) {
 if ( ! function_exists( 'fokus_custom_colors' ) ) :
 function fokus_custom_colors() {
 	global $fokus_colors;
+
+	// Setup colors
+	$pri_theme_co = $fokus_colors[FOKUS_THEMENAME . '_theme_primary']   ? $fokus_colors[FOKUS_THEMENAME . '_theme_primary']   : '';
+	$sec_theme_co = $fokus_colors[FOKUS_THEMENAME . '_theme_secondary'] ? $fokus_colors[FOKUS_THEMENAME . '_theme_secondary'] : '';
+
+	$pri_menu_bg_in = $fokus_colors[FOKUS_THEMENAME . '_primary_menu_bg_inactive']    ? 'background: #' . $fokus_colors[FOKUS_THEMENAME . '_primary_menu_bg_inactive'] . ';' : '';
+	$pri_menu_co_in = $fokus_colors[FOKUS_THEMENAME . '_primary_menu_color_inactive'] ? 'color: #' . $fokus_colors[FOKUS_THEMENAME . '_primary_menu_color_inactive'] . ';'   : '';
+	$pri_menu_bg_ac = $fokus_colors[FOKUS_THEMENAME . '_primary_menu_bg_active']      ? 'background: #' . $fokus_colors[FOKUS_THEMENAME . '_primary_menu_bg_active'] . ';'   : 'background: #' . $pri_theme_co . ';';
+	$pri_menu_co_ac = $fokus_colors[FOKUS_THEMENAME . '_primary_menu_color_active']   ? 'color: #' . $fokus_colors[FOKUS_THEMENAME . '_primary_menu_color_active'] . ';'     : '';
+	$pri_menu_bg_ho = $fokus_colors[FOKUS_THEMENAME . '_primary_menu_bg_hover']       ? 'background: #' . $fokus_colors[FOKUS_THEMENAME . '_primary_menu_bg_hover'] . ';'    : '';
+	$pri_menu_co_ho = $fokus_colors[FOKUS_THEMENAME . '_primary_menu_color_hover']    ? 'color: #' . $fokus_colors[FOKUS_THEMENAME . '_primary_menu_color_hover'] . ';'      : '';
+
+	$sec_menu_bg_in = $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_bg_inactive']    ? 'background: #' . $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_bg_inactive'] . ';' : '';
+	$sec_menu_co_in = $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_color_inactive'] ? 'color: #' . $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_color_inactive'] . ';'   : '';
+	$sec_menu_bg_ac = $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_bg_active']      ? 'background: #' . $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_bg_active'] . ';'   : 'background: #' . $sec_theme_co . ';';
+	$sec_menu_co_ac = $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_color_active']   ? 'color: #' . $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_color_active'] . ';'     : '';
+	$sec_menu_bg_ho = $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_bg_hover']       ? 'background: #' . $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_bg_hover'] . ';'    : '';
+	$sec_menu_co_ho = $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_color_hover']    ? 'color: #' . $fokus_colors[FOKUS_THEMENAME . '_secondary_menu_color_hover'] . ';'      : 'color: #' . $pri_theme_co . ';';
 ?>
 <style type="text/css">
-	.primary-menu a { background: #<?php echo $fokus_colors['fokus_menu_bg_inactive']; ?>; color: #<?php echo $fokus_colors['fokus_menu_color_inactive']; ?>; }
-	.primary-menu a.active { background: #<?php echo $fokus_colors['fokus_menu_bg_active']; ?>; color: #<?php echo $fokus_colors['fokus_menu_color_active']; ?>; }
-	.primary-menu a:hover { background: #<?php echo $fokus_colors['fokus_menu_bg_hover']; ?>; color: #<?php echo $fokus_colors['fokus_menu_color_hover']; ?>; }
+<?php if ($pri_theme_co): ?>
+	a:link    { color: #<?php echo $pri_theme_co; ?>; }
+	a:visited { color: #<?php echo $pri_theme_co; ?>; }
+	a:hover,
+	a:focus   { color: #<?php echo $pri_theme_co; ?>; }
+	a:active  { color: #<?php echo $pri_theme_co; ?>; }
+<?php endif; ?>
+<?php if ($pri_menu_bg_in || $pri_menu_co_in): ?>
+	.primary-menu li a { <?php echo $pri_menu_bg_in . ' ' . $pri_menu_co_in; ?> }
+<?php endif; ?>
+<?php if ($pri_menu_bg_ac || $pri_menu_co_ac): ?>
+	.primary-menu li.current-menu-item a { <?php echo $pri_menu_bg_ac . ' ' . $pri_menu_co_ac; ?>  }
+<?php endif; ?>
+<?php if ($pri_menu_bg_ho || $pri_menu_co_ho): ?>
+	.primary-menu li a:hover { <?php echo $pri_menu_bg_ho . ' ' . $pri_menu_co_ho; ?>  }
+<?php endif; ?>
+<?php if ($sec_menu_bg_in || $sec_menu_co_in): ?>
+	.secondary-menu li a { <?php echo $sec_menu_bg_in . ' ' . $sec_menu_co_in; ?> }
+<?php endif; ?>
+<?php if ($sec_menu_bg_ac || $sec_menu_co_ac): ?>
+	.secondary-menu li.current-menu-item a { <?php echo $sec_menu_bg_ac . ' ' . $sec_menu_co_ac; ?>  }
+<?php endif; ?>
+<?php if ($sec_menu_bg_ho || $sec_menu_co_ho): ?>
+	.secondary-menu li a:hover { <?php echo $sec_menu_bg_ho . ' ' . $sec_menu_co_ho; ?>  }
+<?php endif; ?>
 </style>
 <?php
 }

@@ -3,56 +3,72 @@
 // Setup form
 $fokus_options = array(
 	array(
+		"type" => "start-table"
+	),
+	array(
+		"name" => "Primary theme color",
+		"desc" => "Your themes primary color.",
+		"id" => FOKUS_THEMENAME . "_theme_primary",
+		"type" => "text",
+		"std_value" => "e02802",
+		"prefix" => "#"
+	),
+	array(
+		"name" => "Secondary theme color",
+		"desc" => "",
+		"id" => FOKUS_THEMENAME . "_theme_secondary",
+		"type" => "text",
+		"std_value" => "ffdf12",
+		"prefix" => "#"
+	),
+	array(
+		"type" => "end-table"
+	),
+	array(
 		"name" => "Primary menu colors",
 		"type" => "title"
 	),
 	array(
-		"type" => 'start-table'
+		"type" => "start-table"
 	),
 	array(
 		"name" => "Background inactive",
-		"desc" => "",
-		"id" => FOKUS_THEMENAME . "_menu_bg_inactive",
+		"id" => FOKUS_THEMENAME . "_primary_menu_bg_inactive",
 		"type" => "text",
 		"std_value" => "000",
 		"prefix" => "#"
 	),
 	array(
 		"name" => "Color inactive",
-		"desc" => "",
-		"id" => FOKUS_THEMENAME . "_menu_color_inactive",
+		"id" => FOKUS_THEMENAME . "_primary_menu_color_inactive",
 		"type" => "text",
 		"std_value" => "FFF",
 		"prefix" => "#"
 	),
 	array(
 		"name" => "Background active",
-		"desc" => "",
-		"id" => FOKUS_THEMENAME . "_menu_bg_active",
+		"id" => FOKUS_THEMENAME . "_primary_menu_bg_active",
 		"type" => "text",
 		"prefix" => "#",
 		"suffix" => "*"
 	),
 	array(
 		"name" => "Color active",
-		"desc" => "",
-		"id" => FOKUS_THEMENAME . "_menu_color_active",
+		"id" => FOKUS_THEMENAME . "_primary_menu_color_active",
 		"type" => "text",
 		"std_value" => "FFF",
 		"prefix" => "#"
 	),
 	array(
 		"name" => "Background hover",
-		"desc" => "",
-		"id" => FOKUS_THEMENAME . "_menu_bg_hover",
+		"id" => FOKUS_THEMENAME . "_primary_menu_bg_hover",
 		"type" => "text",
 		"std_value" => "999",
 		"prefix" => "#"
 	),
 	array(
 		"name" => "Color hover",
-		"desc" => "",
-		"id" => FOKUS_THEMENAME . "_menu_color_hover",
+		"id" => FOKUS_THEMENAME . "_primary_menu_color_hover",
 		"type" => "text",
 		"std_value" => "FFF",
 		"prefix" => "#"
@@ -61,8 +77,59 @@ $fokus_options = array(
 		"type" => "end-table"
 	),
 	array(
+		"name" => "Secondary menu colors",
+		"type" => "title"
+	),
+	array(
+		"type" => "start-table"
+	),
+	array(
+		"name" => "Background inactive",
+		"id" => FOKUS_THEMENAME . "_secondary_menu_bg_inactive",
+		"type" => "text",
+		"std_value" => "CDCDCD",
+		"prefix" => "#"
+	),
+	array(
+		"name" => "Color inactive",
+		"id" => FOKUS_THEMENAME . "_secondary_menu_color_inactive",
+		"type" => "text",
+		"std_value" => "000",
+		"prefix" => "#"
+	),
+	array(
+		"name" => "Background active",
+		"id" => FOKUS_THEMENAME . "_secondary_menu_bg_active",
+		"type" => "text",
+		"prefix" => "#",
+		"suffix" => "**"
+	),
+	array(
+		"name" => "Color active",
+		"id" => FOKUS_THEMENAME . "_secondary_menu_color_active",
+		"type" => "text",
+		"std_value" => "000",
+		"prefix" => "#"
+	),
+	array(
+		"name" => "Background hover",
+		"id" => FOKUS_THEMENAME . "_secondary_menu_bg_hover",
+		"type" => "text",
+		"prefix" => "#"
+	),
+	array(
+		"name" => "Color hover",
+		"id" => FOKUS_THEMENAME . "_secondary_menu_color_hover",
+		"type" => "text",
+		"prefix" => "#",
+		"suffix" => "*"
+	),
+	array(
+		"type" => "end-table"
+	),
+	array(
 		"type" => "paragraph",
-		"value" => "* If no value is selected, the primary theme color will be used."
+		"value" => "* If no value is selected, the primary theme color will be used.<br />** If no value is selected, the secondary theme color will be used."
 	)
 );
 
@@ -82,7 +149,13 @@ function fokus_add_admin() {
 
 			update_option( FOKUS_THEMENAME . '_settings', $values );
 
-			echo '<div id="message" class="updated fade"><p><strong>' . __( 'Options saved.' ) . '</strong></p></div>';
+		} else if( 'reset' == $_REQUEST['action'] ) {
+
+			delete_option( FOKUS_THEMENAME . '_settings' );
+
+			header("Location: themes.php?page=settings.inc&reset=true");
+			die;
+
 		}
 	}
 
@@ -92,6 +165,9 @@ function fokus_add_admin() {
 
 function fokus_admin() {
 	global $fokus_options;
+
+  if ( $_REQUEST['save'] ) echo '<div id="message" class="updated fade"><p><strong>' . __( 'Options saved.' ) . '</strong></p></div>';
+  if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>' . __( 'Options restored.' ) . '</strong></p></div>';
 
 	$settings = get_settings( FOKUS_THEMENAME . '_settings' );
 ?>
@@ -107,11 +183,13 @@ switch ($value['type']) {
 case "start-table":
 ?>
 <table class="form-table">
+	<tbody>
 <?php
 break;
 
 case "end-table";
 ?>
+	</tbody>
 </table>
 <?php
 break;
@@ -206,6 +284,12 @@ break;
 <p class="submit">
 <input class="button-primary" name="save" type="submit" value="Save changes" />
 <input type="hidden" name="action" value="save" />
+</p>
+</form>
+<form method="post" action="">
+<p class="submit">
+<input name="reset" type="submit" value="Reset default colors" />
+<input type="hidden" name="action" value="reset" />
 </p>
 </form>
 </div>
