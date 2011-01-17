@@ -58,6 +58,20 @@ a img {
 body {
   background: #fff;
   color: #000;
+  font: 12px/22px Garamond, "Times New Roman", serif;
+}
+.header .title {
+  border-left: 22px solid #e02802;
+  font-size: 22px;
+  height: 22px;
+  padding: 0 0 0 4px;
+}
+.header .title a {
+  color: #000;
+  white-space: nowrap;
+}
+.header #site-description {
+  font-size: 10px;
 }
 /* end Layout, regions */
 
@@ -71,11 +85,16 @@ a:active  { color: #e02802; }
 /* end Links */
 
 /** Menu */
+.primary-menu { margin: 0 0 1px 0; }
 .primary-menu li,
 .secondary-menu li {
-  display: inline;
-  font: 12px/22px Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: inline-block;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 10px;
 }
+.primary-menu ul { line-height: 24px; }
+.secondary-menu ul,
+.secondary-menu li { line-height: 17px; }
 .primary-menu li a { padding: 6px 5px; text-transform: uppercase; white-space: nowrap; }
 .secondary-menu li a { padding: 2px 5px; white-space: nowrap; }
 .primary-menu li a { background: #000; color: #FFF; }
