@@ -6,6 +6,14 @@ define( 'FOKUS_THEMENAME', "fokus" );
 // Include color settings page
 require_once('inc/settings.inc');
 
+// Register stylesheets
+// wp_enqueue_style( 'id', FOKUS_THEMEURL . '/style/FILE.css' );
+
+// Register javascript
+wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'placeholder', FOKUS_THEMEURL . '/js/jquery.textPlaceholder.js', array( 'jquery' ) );
+wp_enqueue_script( 'fokus', FOKUS_THEMEURL . '/js/jquery.fokus.js', array( 'jquery', 'placeholder' ) );
+
 add_action( 'after_setup_theme', 'fokus_setup' );
 
 if ( ! function_exists( 'fokus_setup' ) ):
@@ -60,18 +68,25 @@ function fokus_setup() {
 
 endif;
 
-// Register stylesheets
-// wp_enqueue_style( 'id', FOKUS_THEMEURL . '/style/FILE.css' );
+/**
+ * Override search form
+ */
+function fokus_search_form($form) {
+	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+	<div>
+	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . __('Search for...') . '" title="' . __('Search for...') . '" />
+	<input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
+	</div>
+	</form>';
 
-// Register javascript
-wp_enqueue_script( 'jquery' );
-
-// Apply custom colors
-$fokus_colors = get_settings( FOKUS_THEMENAME . '_settings' );
-if ($fokus_colors) {
-	add_action('wp_head', 'fokus_custom_colors');
+	return $form;
 }
+add_filter( 'get_search_form', 'fokus_search_form' );
 
+
+/**
+ * Apply custom colors
+ */
 if ( ! function_exists( 'fokus_custom_colors' ) ) :
 function fokus_custom_colors() {
 	global $fokus_colors;
@@ -124,3 +139,8 @@ function fokus_custom_colors() {
 <?php
 }
 endif;
+
+$fokus_colors = get_settings( FOKUS_THEMENAME . '_settings' );
+if ($fokus_colors) {
+	add_action('wp_head', 'fokus_custom_colors');
+}
