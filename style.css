@@ -4,7 +4,7 @@ Theme URI: http://www.fokus.se/
 Description: The fokus theme is built with fokus.se as an inspiration.
 Author: Good Old (Linus Lundahl / Pelle Wessman)
 Version: 0.1-dev
-Tags: magazine
+Tags: magazine, css3
 */
 
 
@@ -56,9 +56,13 @@ a img {
 
 /** Layout, regions */
 body {
-	background: #fff;
+	background: url("images/bg-default.png") #fff;
 	color: #000;
 	font: 12px/22px Garamond, "Times New Roman", serif;
+}
+.evil-wrapper {
+	background: #fff;
+	padding: 10px;
 }
 .header {
 	margin: 0 0 5px 0;
@@ -76,6 +80,9 @@ body {
 .header #site-description {
 	font-size: 10px;
 }
+.footer {
+	margin: 10px 0 0 30px;
+}
 /* end Layout, regions */
 
 /* Links */
@@ -83,7 +90,7 @@ a         { text-decoration: none; }
 a:link    { color: #e02802; }
 a:visited { color: #e02802; }
 a:hover,
-a:focus   { color: #e02802; text-decoration: underline; }
+a:focus   { color: #e02802; }
 a:active  { color: #e02802; }
 /* end Links */
 
@@ -129,7 +136,7 @@ input[type="submit"] {
 .primary-menu li,
 .secondary-menu li {
 	display: inline-block;
-	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 10px;
 }
 .primary-menu ul { line-height: 24px; }
@@ -144,6 +151,106 @@ input[type="submit"] {
 .secondary-menu li.current-menu-item a { background: #ffdf12; color: #000;	}
 .secondary-menu li a:hover { color: #e02802;	 }
 /* end Menu */
+
+/** Widgets */
+.widget-container {
+	background: #616161;
+	padding: 5px;
+	margin: 0 0 10px 0;
+}
+.widget-container .widgettitle {
+	background: #1b1818;
+	background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0.5, rgb(27,24,24)),
+			color-stop(0.5, rgb(48,44,45))
+	);
+	background-image: -moz-linear-gradient(
+			center bottom,
+			rgb(27,24,24) 50%,
+			rgb(48,44,45) 50%
+	);
+	color: #fff;
+	font: normal bold 9px/100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	padding: 5px;
+}
+.widget-container > ul {
+	background: #ddd;
+	padding: 5px;
+}
+/* end Widgets */
+
+/** Posts */
+.hfeed, .posts {
+	background: #ddd;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.3, rgb(255,255,255)),
+		color-stop(0.7, rgb(221,221,221))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 30%,
+		rgb(221,221,221) 70%
+	);
+	padding: 5px 5px 0 5px;
+}
+.hfeed .post,
+.posts .post {
+	margin: 0 0 5px 0;
+	overflow: hidden;
+	padding: 5px;
+}
+.hfeed .post:nth-child(even),
+.posts .post:nth-child(even) {
+	background: #fff;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(250,250,250)),
+		color-stop(1, rgb(239,239,239))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(250,250,250) 50%,
+		rgb(239,239,239) 100%
+	);
+}
+.hfeed .post:nth-child(odd),
+.posts .post:nth-child(odd) {
+	background: #eee;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(221,221,221)),
+		color-stop(1, rgb(238,238,238))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(221,221,221) 50%,
+		rgb(238,238,238) 100%
+	);
+}
+.hfeed .post .entry-title,
+.posts .post .entry-title {
+	font: 15px/100% 'ArvoRegular', Garamond, "Times New Roman", serif;
+}
+.hfeed .post .entry-title a,
+.posts .post .entry-title a { color: #000; }
+.hfeed .post .entry-title a:hover,
+.posts .post .entry-title a:hover { color: #e02802; }
+
+.posts .post > a { float: left; margin: 0 10px 0 0; }
+.posts .post > a img { display: block; }
+.posts .post h2 { clear: none; }
+/* end Posts */
 
 /** Media Queries */
 /* end Media Queries */

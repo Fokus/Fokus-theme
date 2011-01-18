@@ -7,7 +7,7 @@ define( 'FOKUS_THEMENAME', "fokus" );
 require_once('inc/settings.inc');
 
 // Register stylesheets
-// wp_enqueue_style( 'id', FOKUS_THEMEURL . '/style/FILE.css' );
+wp_enqueue_style( 'fonts', FOKUS_THEMEURL . '/style/fonts.css' );
 
 // Register javascript
 wp_enqueue_script( 'jquery' );
@@ -140,6 +140,9 @@ function fokus_custom_colors() {
 <?php endif; ?>
 <?php if ($sec_menu_bg_ho || $sec_menu_co_ho): ?>
 	.secondary-menu li a:hover { <?php echo $sec_menu_bg_ho . ' ' . $sec_menu_co_ho; ?> }
+<?php endif; ?>
+<?php if ($pri_theme_co): ?>
+	.hfeed .post .entry-title a:hover { color: <?php echo $pri_theme_co; ?>; }
 <?php endif; ?>
 </style>
 <?php
