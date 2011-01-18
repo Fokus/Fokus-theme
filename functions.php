@@ -12,7 +12,7 @@ require_once('inc/settings.inc');
 // Register javascript
 wp_enqueue_script( 'jquery' );
 wp_enqueue_script( 'placeholder', FOKUS_THEMEURL . '/js/jquery.textPlaceholder.js', array( 'jquery' ) );
-wp_enqueue_script( 'fokus', FOKUS_THEMEURL . '/js/jquery.fokus.js', array( 'jquery', 'placeholder' ) );
+wp_enqueue_script( 'fokus', FOKUS_THEMEURL . '/js/jquery.fokus.js', array( 'jquery', 'placeholder' ), false, true );
 
 add_action( 'after_setup_theme', 'fokus_setup' );
 

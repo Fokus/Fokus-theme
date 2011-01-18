@@ -1,5 +1,5 @@
 var $j = jQuery.noConflict();
 
-$j(function () {
-  $j("#s").textPlaceholder();
-});
+(function ($) {
+	$("#s").textPlaceholder();
+}($j));
