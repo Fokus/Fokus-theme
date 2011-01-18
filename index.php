@@ -77,6 +77,7 @@
 									<?php echo get_the_date(); ?> <?php the_time(); ?>
 								</span>
 							</span>
+							<?php edit_post_link( __('Edit this'), '<span class="edit">', '</span>' ); ?>
 						</div><!-- .entry-meta -->
 
 						<?php if ( is_singular() ) : // Only display excerpts for archives and search. ?>
