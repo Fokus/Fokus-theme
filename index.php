@@ -48,7 +48,7 @@
 
 		<?php
 		if ( have_posts() ) :
-			if ( is_page() && is_front_page() && dynamic_sidebar( 'Front-main' )):
+			if ( is_front_page() && dynamic_sidebar( 'Front-main' ) ):
 				// The sidebar was printed above
 			else:
 				$heading_tag = ($heading_tag == 'h1' ? 'h2' : 'h1');
