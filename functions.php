@@ -26,7 +26,9 @@ function fokus_setup() {
 
 	// Register sidebars
 	$zones = array(
-		$main_article => array('name' => 'Front-main'),
+		array('name' => 'Front-main'),
+		array('name' => 'Sidebar'),
+		array('name' => 'Footer'),
 	);
 	foreach ( $zones as $zone ) {
 		register_sidebar( $zone );
