@@ -121,19 +121,19 @@ function fokus_custom_colors() {
 	.primary-menu li a { <?php echo $pri_menu_bg_in . ' ' . $pri_menu_co_in; ?> }
 <?php endif; ?>
 <?php if ($pri_menu_bg_ac || $pri_menu_co_ac): ?>
-	.primary-menu li.current-menu-item a { <?php echo $pri_menu_bg_ac . ' ' . $pri_menu_co_ac; ?>  }
+	.primary-menu li.current-menu-item a { <?php echo $pri_menu_bg_ac . ' ' . $pri_menu_co_ac; ?> }
 <?php endif; ?>
 <?php if ($pri_menu_bg_ho || $pri_menu_co_ho): ?>
-	.primary-menu li a:hover { <?php echo $pri_menu_bg_ho . ' ' . $pri_menu_co_ho; ?>  }
+	.primary-menu li a:hover { <?php echo $pri_menu_bg_ho . ' ' . $pri_menu_co_ho; ?> }
 <?php endif; ?>
 <?php if ($sec_menu_bg_in || $sec_menu_co_in): ?>
 	.secondary-menu li a { <?php echo $sec_menu_bg_in . ' ' . $sec_menu_co_in; ?> }
 <?php endif; ?>
 <?php if ($sec_menu_bg_ac || $sec_menu_co_ac): ?>
-	.secondary-menu li.current-menu-item a { <?php echo $sec_menu_bg_ac . ' ' . $sec_menu_co_ac; ?>  }
+	.secondary-menu li.current-menu-item a { <?php echo $sec_menu_bg_ac . ' ' . $sec_menu_co_ac; ?> }
 <?php endif; ?>
 <?php if ($sec_menu_bg_ho || $sec_menu_co_ho): ?>
-	.secondary-menu li a:hover { <?php echo $sec_menu_bg_ho . ' ' . $sec_menu_co_ho; ?>  }
+	.secondary-menu li a:hover { <?php echo $sec_menu_bg_ho . ' ' . $sec_menu_co_ho; ?> }
 <?php endif; ?>
 </style>
 <?php

@@ -10,7 +10,7 @@ $fokus_options = array(
 		"desc" => "Your themes primary color.",
 		"id" => FOKUS_THEMENAME . "_theme_primary",
 		"type" => "text",
-		"std_value" => "e02802",
+		"std_value" => "E02802",
 		"prefix" => "#"
 	),
 	array(
@@ -18,7 +18,7 @@ $fokus_options = array(
 		"desc" => "",
 		"id" => FOKUS_THEMENAME . "_theme_secondary",
 		"type" => "text",
-		"std_value" => "ffdf12",
+		"std_value" => "FFDF12",
 		"prefix" => "#"
 	),
 	array(
@@ -42,7 +42,7 @@ $fokus_options = array(
 		"name" => "Color inactive",
 		"id" => FOKUS_THEMENAME . "_primary_menu_color_inactive",
 		"type" => "text",
-		"std_value" => "FFF",
+		"std_value" => "DDD",
 		"prefix" => "#"
 	),
 	array(
@@ -63,14 +63,14 @@ $fokus_options = array(
 		"name" => "Background hover",
 		"id" => FOKUS_THEMENAME . "_primary_menu_bg_hover",
 		"type" => "text",
-		"std_value" => "999",
+		"std_value" => "444",
 		"prefix" => "#"
 	),
 	array(
 		"name" => "Color hover",
 		"id" => FOKUS_THEMENAME . "_primary_menu_color_hover",
 		"type" => "text",
-		"std_value" => "FFF",
+		"std_value" => "DDD",
 		"prefix" => "#"
 	),
 	array(
