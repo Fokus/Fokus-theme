@@ -33,10 +33,16 @@ function fokus_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// Register sidebars
+	$global = array(
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
+	);
+
 	$zones = array(
-		array('name' => 'Front-main'),
-		array('name' => 'Sidebar'),
-		array('name' => 'Footer'),
+		array('name' => 'Secondary-menu') + $global,
+		array('name' => 'Front-main') + $global,
+		array('name' => 'Sidebar') + $global,
+		array('name' => 'Footer') + $global
 	);
 	foreach ( $zones as $zone ) {
 		register_sidebar( $zone );

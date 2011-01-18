@@ -39,12 +39,20 @@
 				</a>
 			</<?php echo $heading_tag; ?>>
 			<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+			<div class="menu">
+				<?php wp_nav_menu( array( 'container_class' => 'primary-menu', 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
+				<?php
+					$sec_menu = wp_nav_menu( array( 'theme_location' => 'secondary', 'depth' => 1, 'fallback_cb' => FALSE, 'echo' => FALSE ) );
+					if ($sec_menu || dynamic_sidebar( 'Secondary-menu' )):
+				?>
+				<div class="secondary-menu">
+					<?php echo $sec_menu; ?>
+					<?php dynamic_sidebar( 'Secondary-menu' ); ?>
+				</div>
+				<?php endif; ?>
+			</div><!-- .menu -->
 			<?php get_search_form(); ?>
 		</div><!-- .header -->
-		<div class="menu">
-			<?php wp_nav_menu( array( 'container_class' => 'primary-menu', 'theme_location' => 'primary' ) ); ?>
-			<?php wp_nav_menu( array( 'container_class' => 'secondary-menu', 'theme_location' => 'secondary', 'fallback_cb' => FALSE ) ); ?>
-		</div><!-- .menu -->
 
 		<?php
 		if ( have_posts() ) :
