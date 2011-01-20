@@ -66,6 +66,10 @@ function fokus_setup() {
 
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
+	// Add custom image sizes
+  add_image_size( 'list-post-thumbnail', 300, 300 );
+  add_image_size( 'single-post-thumbnail', 680, 680 );
+
 	if ( ! defined( 'NO_HEADER_TEXT' ) )
 		define( 'NO_HEADER_TEXT', true );
 
@@ -142,7 +146,10 @@ function fokus_custom_colors() {
 	.secondary-menu li a:hover { <?php echo $sec_menu_bg_ho . ' ' . $sec_menu_co_ho; ?> }
 <?php endif; ?>
 <?php if ($pri_theme_co): ?>
-	.hfeed .post .entry-title a:hover { color: <?php echo $pri_theme_co; ?>; }
+	.hfeed .post .entry-title a:hover { color: #<?php echo $pri_theme_co; ?>; }
+<?php endif; ?>
+<?php if ($pri_theme_co): ?>
+	.sidebar .widget-container a { color: #<?php echo $sec_theme_co; ?>; }
 <?php endif; ?>
 </style>
 <?php

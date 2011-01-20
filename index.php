@@ -28,18 +28,20 @@
 <body <?php body_class(); ?>>
 	<div class="evil-wrapper">
 		<div class="header">
-			<?php $heading_tag = ( is_home() || is_front_page() || !is_singular() ) ? 'h1' : 'div'; ?>
-			<<?php echo $heading_tag; ?> class="title">
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php if ( get_header_image() ) : ?>
-						<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="<?php bloginfo( 'name' ); ?>" />
-					<?php else: ?>
-						<?php bloginfo( 'name' ); ?>
-					<?php endif; ?>
-				</a>
-			</<?php echo $heading_tag; ?>>
-			<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-			<div class="menu">
+			<div class="site-info">
+				<?php $heading_tag = ( is_home() || is_front_page() || !is_singular() ) ? 'h1' : 'div'; ?>
+				<<?php echo $heading_tag; ?> class="title">
+					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php if ( get_header_image() ) : ?>
+							<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="<?php bloginfo( 'name' ); ?>" />
+						<?php else: ?>
+							<?php bloginfo( 'name' ); ?>
+						<?php endif; ?>
+					</a>
+				</<?php echo $heading_tag; ?>>
+				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+			</div><!-- .site-info -->
+			<div class="site-menu">
 				<?php wp_nav_menu( array( 'container_class' => 'primary-menu', 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
 				<?php
 					$sec_menu = wp_nav_menu( array( 'theme_location' => 'secondary', 'depth' => 1, 'fallback_cb' => FALSE, 'echo' => FALSE ) );
@@ -56,15 +58,20 @@
 
 		<?php
 		if ( have_posts() ) :
-			if ( is_front_page() && dynamic_sidebar( 'Front-main' ) ):
-				// The sidebar was printed above
+			if ( is_front_page() && is_active_sidebar( 2 ) ):
+		?>
+			<div class="front-main">
+				<?php dynamic_sidebar( 'Front-main' ); ?>
+			</div>
+		<?php
 			else:
 				$heading_tag = ($heading_tag == 'h1' ? 'h2' : 'h1');
-				?><div class="hfeed"><?php
+				?><div class="hfeed"><div class="posts"><?php
 				while ( have_posts() ) :
 					the_post();
 					?>
-					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div id="post-<?php the_ID(); ?>" <?php post_class( is_single() ? 'single' : '' ); ?>>
+						<?php the_post_thumbnail( is_single() ? 'single-post-thumbnail' : 'list-post-thumbnail' ); ?>
 						<<?php echo $heading_tag; ?> class="entry-title">
 							<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 						</<?php echo $heading_tag; ?>>
@@ -72,8 +79,8 @@
 						<div class="entry-meta">
 							<span class="author vcard">
 								<?php
-									printf( __( 'By: %1$s', 'fokus' ),
-										sprintf( '<a class="url fn n" href="%1$s" >%2$s</a>',
+									printf( __( 'Text %1$s', 'fokus' ),
+										sprintf( 'Published <a class="url fn n" href="%1$s" >%2$s</a>',
 											get_author_posts_url( get_the_author_meta( 'ID' ) ),
 											get_the_author()
 										)
@@ -99,13 +106,21 @@
 							</div><!-- .entry-summary -->
 						<?php endif; ?>
 					</div>
+
+					<?php comments_template( '', true ); ?>
+
 					<?php
 				endwhile;
-				?></div><?php
+				?></div></div><!-- .hfeed .posts --><?php
 			endif;
 		endif;
-		dynamic_sidebar( 'Sidebar' );
 		?>
+
+		<?php if ( is_active_sidebar( 3 ) ): ?>
+		<div class="sidebar">
+			<?php dynamic_sidebar( 'Sidebar' ); ?>
+		</div>
+		<?php endif; ?>
 
 		<div class="footer"><?php dynamic_sidebar( 'Footer' ); ?></div><!-- .footer -->
 	</div><!-- .evil-wrapper -->

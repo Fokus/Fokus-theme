@@ -87,7 +87,7 @@ $fokus_options = array(
 		"name" => "Background inactive",
 		"id" => FOKUS_THEMENAME . "_secondary_menu_bg_inactive",
 		"type" => "text",
-		"std_value" => "CDCDCD",
+		"std_value" => "DDD",
 		"prefix" => "#"
 	),
 	array(
@@ -149,7 +149,8 @@ function fokus_add_admin() {
 
 			update_option( FOKUS_THEMENAME . '_settings', $values );
 
-		} else if( 'reset' == $_REQUEST['action'] ) {
+		}
+		else if ( 'reset' == $_REQUEST['action'] ) {
 
 			delete_option( FOKUS_THEMENAME . '_settings' );
 
@@ -158,7 +159,6 @@ function fokus_add_admin() {
 
 		}
 	}
-
 
 	add_theme_page( "Colors", "Colors", 'edit_themes', basename(__FILE__), 'fokus_admin' );
 }
