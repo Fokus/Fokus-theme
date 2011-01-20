@@ -3,16 +3,20 @@
 define( 'FOKUS_THEMEURL', get_bloginfo( 'template_directory' ) );
 define( 'FOKUS_THEMENAME', "fokus" );
 
+if ( is_admin() ) {
+	wp_enqueue_style( 'fonts', FOKUS_THEMEURL . '/style/admin.css' );
+}
+
 // Include color settings page
 require_once('inc/settings.inc');
 
 // Register stylesheets
-wp_enqueue_style( 'fonts', FOKUS_THEMEURL . '/style/fonts.css' );
+wp_enqueue_style( 'fokus-fonts', FOKUS_THEMEURL . '/style/fonts.css' );
 
 // Register javascript
 wp_enqueue_script( 'jquery' );
 wp_enqueue_script( 'placeholder', FOKUS_THEMEURL . '/js/jquery.textPlaceholder.js', array( 'jquery' ) );
-wp_enqueue_script( 'fokus', FOKUS_THEMEURL . '/js/jquery.fokus.js', array( 'jquery', 'placeholder' ), false, true );
+wp_enqueue_script( 'fokus-main', FOKUS_THEMEURL . '/js/jquery.fokus.js', array( 'jquery', 'placeholder' ), false, true );
 
 add_action( 'after_setup_theme', 'fokus_setup' );
 
