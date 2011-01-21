@@ -118,7 +118,7 @@
 						<?php endif; ?>
 					</div>
 
-					<?php comments_template( '', true ); ?>
+					<?php comments_template(); ?>
 
 					<?php
 				endwhile;
