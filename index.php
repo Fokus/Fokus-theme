@@ -71,7 +71,18 @@
 					the_post();
 					?>
 					<div id="post-<?php the_ID(); ?>" <?php post_class( is_single() ? 'single' : '' ); ?>>
-						<?php the_post_thumbnail( is_single() ? 'single-post-thumbnail' : 'list-post-thumbnail' ); ?>
+						<?php
+							// Post thumbnails
+							if ( has_post_thumbnail() ):
+								if ( is_single() ):
+									the_post_thumbnail( 'large-fokus-thumbnail' );
+								else:
+									echo '<a href="' . get_permalink() . '" rel="bookmark">';
+									the_post_thumbnail( 'small-fokus-thumbnail' );
+									echo '</a>';
+								endif;
+							endif;
+						?>
 						<<?php echo $heading_tag; ?> class="entry-title">
 							<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 						</<?php echo $heading_tag; ?>>

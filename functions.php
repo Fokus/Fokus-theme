@@ -71,8 +71,9 @@ function fokus_setup() {
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
 	// Add custom image sizes
-  add_image_size( 'list-post-thumbnail', 300, 300 );
-  add_image_size( 'single-post-thumbnail', 680, 680 );
+  add_image_size( 'small-fokus-thumbnail', 150, 150, true );
+  add_image_size( 'medium-fokus-thumbnail', 300, 300 );
+  add_image_size( 'large-fokus-thumbnail', 680, 680 );
 
 	if ( ! defined( 'NO_HEADER_TEXT' ) )
 		define( 'NO_HEADER_TEXT', true );
