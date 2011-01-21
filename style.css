@@ -68,6 +68,7 @@ body {
 	background: url("images/bg-default.png") #fff;
 	color: #000;
 	font: 12px/22px Garamond, "Times New Roman", serif;
+	min-width: 320px;
 }
 .evil-wrapper {
 	background: #fff;
@@ -77,7 +78,8 @@ body {
 	width: 1020px;
 }
 .header {
-	margin: 25px 0 5px 0;
+	margin: 5px 0;
+	padding: 5px 0 0 0;
 	overflow: hidden;
 	position: relative;
 }
@@ -118,8 +120,8 @@ body {
 .primary-menu li { line-height: 20px; }
 .secondary-menu ul,
 .secondary-menu li { line-height: 17px; }
-.primary-menu li a { border-right: 1px solid #fff; padding: 4px 7px; text-transform: uppercase; white-space: nowrap; }
-.secondary-menu li a { border-right: 1px solid #fff; padding: 2px 9px; white-space: nowrap; }
+.primary-menu li a { border-right: 1px solid #fff; margin: 0 0 1px 0; padding: 4px 7px; text-transform: uppercase; white-space: nowrap; }
+.secondary-menu li a { border-right: 1px solid #fff; margin: 0 0 1px 0; padding: 2px 9px; white-space: nowrap; }
 .primary-menu li:last-child a,
 .secondary-menu li:last-child a { border: none; }
 .primary-menu li a {
@@ -144,10 +146,6 @@ body {
 .secondary-menu li.current-menu-item a { background: #ffdf12; color: #000;	}
 .secondary-menu li a:hover { color: #e02802;	 }
 /* end Menu */
-
-/** Search form */
-#searchform input[type="text"] { margin: 10px 0; }
-/* end Search form */
 
 /** Forms */
 input[type="text"],
@@ -398,11 +396,21 @@ input[type="submit"] {
 		width: auto;
 	}
 }
+@media all and (min-width:500px) and (max-width:700px) {
+	.sidebar .widget-container {
+		clear: left;
+		float: left;
+		width: 47%;
+	}
+	.sidebar .widget-container:nth-child(odd) {
+		clear: right;
+		float: right;
+		width: 47%;
+	}
+}
 @media all and (min-width:700px) {
 	#searchform {
-		clear: both;
-		margin: 0;
-		position: relative;
+		text-align: right;
 	}
 	.header .site-info,
 	.header .site-menu {
@@ -418,14 +426,37 @@ input[type="submit"] {
 		width: 29%;
 	}
 }
+@media all and (max-width:900px) {
+	#searchform {
+		clear: both;
+		position: relative;
+	}
+	#searchform div {
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		background: #eee;
+		margin: 5px 0;
+		padding: 5px;
+	}
+	#searchform div input[type="text"] {
+		margin: 0;
+	}
+}
 @media all and (min-width:900px) {
 	#searchform {
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: 5px;
 	}
 }
 @media all and (min-width:1040px) {
+	.header {
+		padding-top: 25px;
+	}
+	#searchform {
+		top: 25px;
+	}
 	.hfeed,
 	.front-main {
 		float: left;
