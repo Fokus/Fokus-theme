@@ -146,7 +146,6 @@ body {
 .secondary-menu > .menu > li.current-menu-item a { background: #ffdf12; color: #000; }
 .secondary-menu > .menu > li a:hover { color: #e02802; }
 .secondary-menu .widget-container {
-  z-index: 100;
   margin: 0;
   padding: 0;
   background: none;
@@ -155,11 +154,14 @@ body {
 .secondary-menu .widget-content {
   display: block;
   position: absolute;
-  z-index: -10;
-  margin-top: 10px;
+  z-index: 10;
+  margin-top: 17px;
   left: 0;
   width: 100%;
   padding: 0;
+  background: #1B1818;
+  color: #fff;
+  border-bottom: 1px solid #fff;
 }
 .secondary-menu  .widget-content > * {
   overflow: hidden;
