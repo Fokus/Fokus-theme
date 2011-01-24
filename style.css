@@ -92,8 +92,12 @@ body {
 .header #site-description {
 	font-size: 10px;
 }
+.sidebar {
+	overflow: hidden;
+}
 .footer {
-	margin: 10px 0 0 30px;
+	margin: 10px 0 0 0;
+	width: 100%;
 }
 /* end Layout, regions */
 
@@ -195,7 +199,6 @@ input[type="submit"] {
 
 /** Widgets */
 .widget-container {
-	background: #111;
 	padding: 5px;
 	margin: 0 0 10px 0;
 }
@@ -218,11 +221,15 @@ input[type="submit"] {
 	text-transform: uppercase;
 	padding: 5px;
 }
+
+.sidebar .widget-container {
+	background: #111;
+}
 .sidebar .widget-container .widgettitle {
 	font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif;
 	text-transform: none;
 }
-.widget-container > ul,
+.sidebar .widget-container > ul,
 .sidebar .widget-container ul li {
 	padding: 5px;
 }
@@ -248,6 +255,26 @@ input[type="submit"] {
 	text-transform: uppercase;
 }
 .sidebar .widget-container a:hover { color: #ffdf12; }
+
+.footer .widget-container {
+	background: #ddd;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.3, rgb(255,255,255)),
+		color-stop(0.7, rgb(221,221,221))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 30%,
+		rgb(221,221,221) 70%
+	);
+}
+.footer .widget-container ul {
+	background: #eee;
+	padding: 5px;
+}
 /* end Widgets */
 
 /** Odd / Even listings */
@@ -304,11 +331,13 @@ input[type="submit"] {
 	);
 	padding: 5px 5px 0 5px;
 }
-.posts .post {
+.posts .post,
+.posts .page {
 	margin: 0 0 5px 0;
 	overflow: hidden;
 }
-.posts .post.single {
+.posts .post.single,
+.posts .page.single {
 	background: #eee;
 	background-image: -webkit-gradient(
 		linear,
@@ -324,23 +353,32 @@ input[type="submit"] {
 	);
 }
 
-.posts .post .entry-title { font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif; }
-.posts .post.single .entry-title { font-size: 25px; line-height: 200%; }
-.posts .post .entry-title a { color: #000; }
-.posts .post .entry-title a:hover { color: #e02802; }
+.posts .post .entry-title,
+.posts .page .entry-title { font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif; }
+.posts .post.single .entry-title,
+.posts .page.single .entry-title { font-size: 25px; line-height: 200%; }
+.posts .post .entry-title a,
+.posts .page .entry-title a { color: #000; }
+.posts .post .entry-title a:hover,
+.posts .page .entry-title a:hover { color: #e02802; }
 
-.posts .post .entry-meta {
+.posts .post .entry-meta,
+.posts .page .entry-meta {
 	color: #555;
 	font: normal normal 9px/200% "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	word-wrap: break-word;
 }
 
-.posts .post.single .entry-content { font-size: 13px; }
+.posts .post.single .entry-content,
+.posts .page.single .entry-content { font-size: 13px; }
 
-.posts .post > a { float: left; margin: 0 10px 0 0; }
-.posts .post > a img { display: block; }
-.posts .post h2 { clear: none; }
+.posts .post > a,
+.posts .page > a { float: left; margin: 0 10px 0 0; }
+.posts .post > a img,
+.posts .page > a img { display: block; }
+.posts .post h2,
+.posts .page h2 { clear: none; }
 /* end Posts */
 
 /** Comments */
@@ -393,7 +431,7 @@ input[type="submit"] {
 	padding: 5px;
 }
 #commentform textarea {
-	width: 398px;
+	width: 97%;
 	height: 70px;
 }
 
@@ -433,6 +471,11 @@ input[type="submit"] {
 		width: 47%;
 	}
 }
+@media all and (min-width:500px) {
+	#commentform textarea {
+		width: 398px;
+	}
+}
 @media all and (min-width:700px) {
 	#searchform {
 		text-align: right;
@@ -449,6 +492,10 @@ input[type="submit"] {
 	.sidebar {
 		float: right;
 		width: 29%;
+	}
+	.footer {
+		clear: both;
+		float: left;
 	}
 }
 @media all and (max-width:900px) {
@@ -484,11 +531,9 @@ input[type="submit"] {
 	}
 	.hfeed,
 	.front-main {
-		float: left;
 		width: 700px;
 	}
 	.sidebar {
-		float: right;
 		width: 300px;
 	}
 }

@@ -1,3 +1,4 @@
+<?php if (get_comment_pages_count()): ?>
 			<div id="comments">
 <?php if ( post_password_required() ) : ?>
 				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'fokus' ); ?></p>
@@ -38,6 +39,7 @@
 <?php endif; ?>
 
 			</div><!-- #comments -->
+<?php endif; ?>
 
 <?php
 	$fields =  array(
