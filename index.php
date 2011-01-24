@@ -44,12 +44,12 @@
 			<div class="site-menu">
 				<?php wp_nav_menu( array( 'container_class' => 'primary-menu', 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
 				<?php
-					$sec_menu = wp_nav_menu( array( 'theme_location' => 'secondary', 'depth' => 1, 'fallback_cb' => FALSE, 'echo' => FALSE ) );
-					if ($sec_menu || dynamic_sidebar( 'Secondary-menu' )):
+					$sec_menu = wp_nav_menu( array( 'container' => FALSE, 'theme_location' => 'secondary', 'depth' => 1, 'fallback_cb' => FALSE, 'echo' => FALSE ) );
+					if ($sec_menu || dynamic_sidebar( 'secondary-menu' )):
 				?>
 				<div class="secondary-menu">
 					<?php echo $sec_menu; ?>
-					<?php dynamic_sidebar( 'Secondary-menu' ); ?>
+					<?php dynamic_sidebar( 'secondary-menu' ); ?>
 				</div>
 				<?php endif; ?>
 			</div><!-- .menu -->
@@ -61,7 +61,7 @@
 			if ( is_front_page() && is_active_sidebar( 2 ) ):
 		?>
 			<div class="front-main">
-				<?php dynamic_sidebar( 'Front-main' ); ?>
+				<?php dynamic_sidebar( 'front-main' ); ?>
 			</div>
 		<?php
 			else:
@@ -129,11 +129,11 @@
 
 		<?php if ( is_active_sidebar( 3 ) ): ?>
 		<div class="sidebar">
-			<?php dynamic_sidebar( 'Sidebar' ); ?>
+			<?php dynamic_sidebar( 'sidebar' ); ?>
 		</div>
 		<?php endif; ?>
 
-		<div class="footer"><?php dynamic_sidebar( 'Footer' ); ?></div><!-- .footer -->
+		<div class="footer"><?php dynamic_sidebar( 'footer' ); ?></div><!-- .footer -->
 	</div><!-- .evil-wrapper -->
 
 	<?php wp_footer(); ?>

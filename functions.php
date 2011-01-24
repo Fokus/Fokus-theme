@@ -39,14 +39,32 @@ function fokus_setup() {
 	// Register sidebars
 	$global = array(
 		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
+		'after_widget' => '</div></div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3><div class="widget-content">',
 	);
 
 	$zones = array(
-		array('name' => 'Secondary-menu') + $global,
-		array('name' => 'Front-main') + $global,
-		array('name' => 'Sidebar') + $global,
-		array('name' => 'Footer') + $global
+		array(
+			'id' => 'secondary-menu',
+			'name' => __( 'Secondary menu', 'fokus' ),
+			'description' => __( 'Widgets in the secondary menu of every page', 'fokus' ),
+		) + $global,
+		array(
+			'id' => 'front-main',
+			'name' => __( 'Front, main', 'fokus' ),
+			'description' => __( 'The main area of the frontpage', 'fokus' ),
+		) + $global,
+		array(
+			'id' => 'sidebar',
+			'name' => __( 'Sidebar', 'fokus' ),
+			'description' => __( 'The right sidebar of every page', 'fokus' ),
+		) + $global,
+		array(
+			'id' => 'footer',
+			'name' => __( 'Footer', 'fokus' ),
+			'description' => __( 'The footer of every page', 'fokus' ),
+		) + $global
 	);
 	foreach ( $zones as $zone ) {
 		register_sidebar( $zone );
