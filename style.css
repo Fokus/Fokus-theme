@@ -239,7 +239,7 @@ input[type="submit"] {
 	padding: 5px;
 	margin: 0 0 10px 0;
 }
-.widget-container .widgettitle {
+.widget-container .widget-title {
 	background: #1b1818;
 	background-image: -webkit-gradient(
 		linear,
@@ -262,7 +262,7 @@ input[type="submit"] {
 .sidebar .widget-container {
 	background: #111;
 }
-.sidebar .widget-container .widgettitle {
+.sidebar .widget-container .widget-title {
 	font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif;
 	text-transform: none;
 }
