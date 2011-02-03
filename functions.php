@@ -192,22 +192,24 @@ if ($fokus_colors) {
  */
 function fokus_get_related($id) {
 	$tags = get_the_tags($id);
-	if ($tags) {
+	if ($tags) :
 		$current[] = $id;
 		foreach ($tags as $tag) :
 			$t = $tag->slug;
 			$posts = get_posts( array('numberposts' => 5, 'tag' => $t, 'post__not_in' => $current ) );
+			if ($posts) :
 ?>
 	<div class="posts-by-tags widget-container">
 			<h2 class="widget-title">Mer om <a href="<?php echo get_tag_link($tag->term_id); ?>" title="Artiklar om <?php echo $tag->name ?>"><?php echo $tag->name ?></a></h2>
 			<?php foreach ($posts as $post) : ?>
 			<ul>
 				<li>
-					<h3><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a></h3>
+					<a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a>
 				</li>
 			</ul>
 			<?php endforeach; ?>
 	</div>
-<?php endforeach;
-	}
+<?php endif;
+		endforeach;
+	endif;
 }

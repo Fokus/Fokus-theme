@@ -419,10 +419,13 @@ input[type="submit"] {
 .posts .page h2 { clear: none; }
 
 .posts-by-tags {
+  background: #eee;
+  clear: both;
   float: right;
-  margin: 0 0 0 10px;
+  margin: 0 0 10px 10px;
   width: 220px;
 }
+.posts-by-tags li { padding: 0 5px; }
 /* end Posts */
 
 /** Comments */
