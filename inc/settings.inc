@@ -6,15 +6,15 @@ $fokus_options = array(
 		"type" => "start-table"
 	),
 	array(
-		"name" => "Primary theme color",
-		"desc" => "Your themes primary color.",
+		"name" => __( "Primary theme color", "fokus" ),
+		"desc" => __( "Your themes primary color.", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_theme_primary",
 		"type" => "text",
 		"std_value" => "E02802",
 		"prefix" => "#"
 	),
 	array(
-		"name" => "Secondary theme color",
+		"name" => __( "Secondary theme color", "fokus" ),
 		"desc" => "",
 		"id" => FOKUS_THEMENAME . "_theme_secondary",
 		"type" => "text",
@@ -25,49 +25,49 @@ $fokus_options = array(
 		"type" => "end-table"
 	),
 	array(
-		"name" => "Primary menu colors",
+		"name" => __( "Primary menu colors", "fokus" ),
 		"type" => "title"
 	),
 	array(
 		"type" => "start-table"
 	),
 	array(
-		"name" => "Background inactive",
+		"name" => __( "Background inactive", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_primary_menu_bg_inactive",
 		"type" => "text",
 		"std_value" => "000",
 		"prefix" => "#"
 	),
 	array(
-		"name" => "Color inactive",
+		"name" => __( "Color inactive", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_primary_menu_color_inactive",
 		"type" => "text",
 		"std_value" => "DDD",
 		"prefix" => "#"
 	),
 	array(
-		"name" => "Background active",
+		"name" => __( "Background active", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_primary_menu_bg_active",
 		"type" => "text",
 		"prefix" => "#",
 		"suffix" => "*"
 	),
 	array(
-		"name" => "Color active",
+		"name" => __( "Color active", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_primary_menu_color_active",
 		"type" => "text",
 		"std_value" => "FFF",
 		"prefix" => "#"
 	),
 	array(
-		"name" => "Background hover",
+		"name" => __( "Background hover", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_primary_menu_bg_hover",
 		"type" => "text",
 		"std_value" => "444",
 		"prefix" => "#"
 	),
 	array(
-		"name" => "Color hover",
+		"name" => __( "Color hover", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_primary_menu_color_hover",
 		"type" => "text",
 		"std_value" => "DDD",
@@ -77,48 +77,48 @@ $fokus_options = array(
 		"type" => "end-table"
 	),
 	array(
-		"name" => "Secondary menu colors",
+		"name" => __( "Secondary menu colors", "fokus" ),
 		"type" => "title"
 	),
 	array(
 		"type" => "start-table"
 	),
 	array(
-		"name" => "Background inactive",
+		"name" => __( "Background inactive", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_secondary_menu_bg_inactive",
 		"type" => "text",
 		"std_value" => "DDD",
 		"prefix" => "#"
 	),
 	array(
-		"name" => "Color inactive",
+		"name" => __( "Color inactive", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_secondary_menu_color_inactive",
 		"type" => "text",
 		"std_value" => "000",
 		"prefix" => "#"
 	),
 	array(
-		"name" => "Background active",
+		"name" => __( "Background active", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_secondary_menu_bg_active",
 		"type" => "text",
 		"prefix" => "#",
 		"suffix" => "**"
 	),
 	array(
-		"name" => "Color active",
+		"name" => __( "Color active", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_secondary_menu_color_active",
 		"type" => "text",
 		"std_value" => "000",
 		"prefix" => "#"
 	),
 	array(
-		"name" => "Background hover",
+		"name" => __( "Background hover", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_secondary_menu_bg_hover",
 		"type" => "text",
 		"prefix" => "#"
 	),
 	array(
-		"name" => "Color hover",
+		"name" => __( "Color hover", "fokus" ),
 		"id" => FOKUS_THEMENAME . "_secondary_menu_color_hover",
 		"type" => "text",
 		"prefix" => "#",
@@ -129,7 +129,7 @@ $fokus_options = array(
 	),
 	array(
 		"type" => "paragraph",
-		"value" => "* If no value is selected, the primary theme color will be used.<br />** If no value is selected, the secondary theme color will be used."
+		"value" => "* " . __( "If no value is selected, the primary theme color will be used.<br />** If no value is selected, the secondary theme color will be used.", "fokus" )
 	)
 );
 

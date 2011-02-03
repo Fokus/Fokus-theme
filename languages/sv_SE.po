@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fokus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-03 11:13+0100\n"
+"PO-Revision-Date: 2011-02-03 11:13+0100\n"
+"Last-Translator: Linus Lundahl <linus.lundahl@goodold.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus\n"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/comments.php:4
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Denna posten är lösenordsskyddad. Fyll i lösenordet för att se eventuella kommentarer."
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/comments.php:16
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/comments.php:27
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Äldre kommentarer"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/comments.php:17
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/comments.php:28
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nyare kommentarer <span class=\"meta-nav\">&rarr;</span>"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/comments.php:36
+msgid "Comments are closed."
+msgstr "Kommentarer är avstängda."
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/comments.php:48
+msgid "Name"
+msgstr "Namn"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/comments.php:51
+msgid "Email"
+msgstr "E-post"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/comments.php:54
+msgid "Website"
+msgstr "Hemsida"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:53
+msgid "Secondary menu"
+msgstr "Sekundär meny"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:54
+msgid "Widgets in the secondary menu of every page"
+msgstr "Widgets i den sekundära menyn på varje sida"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:58
+msgid "Front, main"
+msgstr "Framsida, huvudarea"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:59
+msgid "The main area of the frontpage"
+msgstr "Huvudarean på framsidan"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:63
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:64
+msgid "The right sidebar of every page"
+msgstr "Den högra sidebaren på varje sida"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:68
+msgid "Footer"
+msgstr "Sidfot"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:69
+msgid "The footer of every page"
+msgstr "Sidfot på varje sida"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:78
+msgid "Primary Navigation"
+msgstr "Huvudnavigation"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:79
+msgid "Secondary Navigation"
+msgstr "Sekundär navigation"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/functions.php:113
+msgid "Search for..."
+msgstr "Sök efter..."
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/index.php:23
+#, php-format
+msgid "Page %s"
+msgstr "Sida %s"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/index.php:93
+#, php-format
+msgid "Text %1$s"
+msgstr "Text %1$s"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/index.php:106
+msgid "Edit this"
+msgstr "Redigera"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/index.php:111
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Fortsätt läsa <span class=\"meta-nav\">&rarr;</span>"
+
+#: /Users/linus/Sites/fokus.local/public_html/wp-content/themes/fokus/index.php:112
+msgid "Pages:"
+msgstr "Sidor:"
+
+#~ msgid "1 comment"
+#~ msgstr "1 kommentar"

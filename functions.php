@@ -18,6 +18,9 @@ wp_enqueue_script( 'jquery' );
 wp_enqueue_script( 'placeholder', FOKUS_THEMEURL . '/js/jquery.textPlaceholder.js', array( 'jquery' ) );
 wp_enqueue_script( 'fokus-main', FOKUS_THEMEURL . '/js/jquery.fokus.js', array( 'jquery', 'placeholder' ), false, true );
 
+// Load translations
+load_theme_textdomain( 'fokus', TEMPLATEPATH . '/languages' );
+
 add_action( 'after_setup_theme', 'fokus_setup' );
 
 if ( ! function_exists( 'fokus_setup' ) ):
