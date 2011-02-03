@@ -110,15 +110,24 @@
 							<div class="entry-content">
 								<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fokus' ) ); ?>
 								<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'fokus' ), 'after' => '</div>' ) ); ?>
+								<?php comments_template(); ?>
 							</div><!-- .entry-content -->
 						<?php else : ?>
 							<div class="entry-summary">
 								<?php the_excerpt(); ?>
 							</div><!-- .entry-summary -->
+
+							<div class="nav">
+								<?php if (get_previous_posts_link()): ?>
+								<div class="prev"><?php previous_posts_link('Previous entries'); ?></div>
+								<?php endif; ?>
+								<?php if (get_next_posts_link()): ?>
+								<div class="next"><?php next_posts_link('Next entries'); ?></div>
+								<?php endif; ?>
+							</div><!-- .nav -->
+
 						<?php endif; ?>
 					</div>
-
-					<?php comments_template(); ?>
 
 					<?php
 				endwhile;
