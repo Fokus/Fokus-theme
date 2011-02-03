@@ -92,9 +92,9 @@ function fokus_setup() {
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
 	// Add custom image sizes
-  add_image_size( 'small-fokus-thumbnail', 150, 150, true );
-  add_image_size( 'medium-fokus-thumbnail', 300, 300 );
-  add_image_size( 'large-fokus-thumbnail', 680, 680 );
+	add_image_size( 'small-fokus-thumbnail', 150, 150, true );
+	add_image_size( 'medium-fokus-thumbnail', 300, 300 );
+	add_image_size( 'large-fokus-thumbnail', 440, 314, true );
 
 	if ( ! defined( 'NO_HEADER_TEXT' ) )
 		define( 'NO_HEADER_TEXT', true );
@@ -185,4 +185,29 @@ endif;
 $fokus_colors = get_settings( FOKUS_THEMENAME . '_settings' );
 if ($fokus_colors) {
 	add_action('wp_head', 'fokus_custom_colors');
+}
+
+/**
+ * Custom function to get related post content
+ */
+function fokus_get_related($id) {
+	$tags = get_the_tags($id);
+	if ($tags) {
+		$current[] = $id;
+		foreach ($tags as $tag) :
+			$t = $tag->slug;
+			$posts = get_posts( array('numberposts' => 5, 'tag' => $t, 'post__not_in' => $current ) );
+?>
+	<div class="posts-by-tags widget-container">
+			<h2 class="widget-title">Mer om <a href="<?php echo get_tag_link($tag->term_id); ?>" title="Artiklar om <?php echo $tag->name ?>"><?php echo $tag->name ?></a></h2>
+			<?php foreach ($posts as $post) : ?>
+			<ul>
+				<li>
+					<h3><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a></h3>
+				</li>
+			</ul>
+			<?php endforeach; ?>
+	</div>
+<?php endforeach;
+	}
 }

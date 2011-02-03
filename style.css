@@ -366,6 +366,7 @@ input[type="submit"] {
 		rgb(255,255,255) 30%,
 		rgb(221,221,221) 70%
 	);
+	overflow: hidden;
 	padding: 5px 5px 0 5px;
 }
 .posts .post,
@@ -393,7 +394,7 @@ input[type="submit"] {
 .posts .post .entry-title,
 .posts .page .entry-title { font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif; }
 .posts .post.single .entry-title,
-.posts .page.single .entry-title { font-size: 25px; line-height: 200%; }
+.posts .page.single .entry-title { font-size: 25px; }
 .posts .post .entry-title a,
 .posts .page .entry-title a { color: #000; }
 .posts .post .entry-title a:hover,
@@ -416,6 +417,12 @@ input[type="submit"] {
 .posts .page > a img { display: block; }
 .posts .post h2,
 .posts .page h2 { clear: none; }
+
+.posts-by-tags {
+  float: right;
+  margin: 0 0 0 10px;
+  width: 220px;
+}
 /* end Posts */
 
 /** Comments */

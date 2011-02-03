@@ -66,7 +66,11 @@
 		<?php
 			else:
 				$heading_tag = ($heading_tag == 'h1' ? 'h2' : 'h1');
-				?><div class="hfeed"><div class="posts"><?php
+				?><div class="hfeed">
+					<?php if ( is_single() ) : ?>
+					<?php fokus_get_related( get_the_ID() ); ?>
+					<?php endif; ?>
+						<div class="posts"><?php
 				while ( have_posts() ) :
 					the_post();
 					?>
