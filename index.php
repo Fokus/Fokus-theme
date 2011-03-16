@@ -42,7 +42,7 @@
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 			</div><!-- .site-info -->
 			<div class="site-menu">
-				<?php wp_nav_menu( array( 'container_class' => 'primary-menu', 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
+				<?php wp_nav_menu( array( 'container_class' => 'primary-menu', 'menu_class' => 'primary-menu', 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
 				<?php
 					$sec_menu = wp_nav_menu( array( 'container' => FALSE, 'theme_location' => 'secondary', 'depth' => 1, 'fallback_cb' => FALSE, 'echo' => FALSE ) );
 					if ($sec_menu || dynamic_sidebar( 'secondary-menu' )):
