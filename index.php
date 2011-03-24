@@ -58,7 +58,7 @@
 
 		<?php
 		if ( have_posts() ) :
-			if ( is_front_page() && is_active_sidebar( 2 ) ):
+			if ( is_front_page() && is_active_sidebar( 'front-main' ) ):
 		?>
 			<div class="front-main">
 				<?php dynamic_sidebar( 'front-main' ); ?>
