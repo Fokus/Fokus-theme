@@ -67,8 +67,17 @@
 			else:
 				$heading_tag = ($heading_tag == 'h1' ? 'h2' : 'h1');
 				?><div class="hfeed">
+					<?php if ( is_archive() ): ?>
+						<div class="cat-info">
+							<?php if ( function_exists( 'fokus_taxonomy_image' ) ):
+								fokus_taxonomy_image();
+							endif ?>
+							<h1 class="cat-title"><?php single_cat_title(); ?></h1>
+							<?php echo category_description(); ?>
+						</div>
+					<?php endif; ?>
 					<?php if ( is_single() ) : ?>
-					<?php fokus_get_related( get_the_ID() ); ?>
+						<?php fokus_get_related( get_the_ID() ); ?>
 					<?php endif; ?>
 						<div class="posts"><?php
 				while ( have_posts() ) :
@@ -107,7 +116,7 @@
 									<?php echo get_the_date(); ?> <?php the_time(); ?>
 								</span>
 							</span>
-							<?php edit_post_link( __('Edit this'), '<span class="edit">', '</span>' ); ?>
+							<?php edit_post_link( __( 'Edit this' ), '<span class="edit">', '</span>' ); ?>
 						</div><!-- .entry-meta -->
 
 						<?php if ( is_singular() ) : // Only display excerpts for archives and search. ?>
