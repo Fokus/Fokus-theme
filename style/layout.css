@@ -1,0 +1,132 @@
+/** Layout, regions */
+body {
+	background: url("images/bg-default.png") #fff;
+	color: #000;
+	font: 12px/22px Garamond, "Times New Roman", serif;
+	min-width: 320px;
+}
+.evil-wrapper {
+	background: #fff;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 10px 40px 10px;
+	width: 1020px;
+}
+.header {
+	margin: 5px 0;
+	padding: 5px 0 0 0;
+	position: relative;
+	width: 100%;
+	float: left;
+}
+.header .site-info {
+	margin: 0 10px 0 0;
+}
+.header .title {
+	border-left: 24px solid #e02802;
+	font-size: 24px;
+	height: 24px;
+	padding: 0 0 0 4px;
+	text-transform: uppercase;
+}
+.header .title a {
+	color: #000;
+	white-space: nowrap;
+}
+.header #site-description {
+	font-size: 10px;
+}
+.sidebar {
+	overflow: hidden;
+}
+.footer {
+	margin: 10px 0 0 0;
+	width: 100%;
+}
+/* end Layout, regions */
+
+/** Media Queries */
+@media all and (max-width:1040px), all and (max-device-width:1040px) {
+	.evil-wrapper {
+		width: auto;
+	}
+}
+@media all and (min-width:500px) and (max-width:700px) {
+	.sidebar .widget-container {
+		clear: left;
+		float: left;
+		width: 47%;
+	}
+	.sidebar .widget-container:nth-child(odd) {
+		clear: right;
+		float: right;
+		width: 47%;
+	}
+}
+@media all and (min-width:500px) {
+	#commentform textarea {
+		width: 398px;
+	}
+}
+@media all and (min-width:700px) {
+	#searchform {
+		text-align: right;
+	}
+	.header .site-info,
+	.header .site-menu {
+		float: left;
+	}
+	.hfeed,
+	.front-main {
+		float: left;
+		width: 69%;
+	}
+	.sidebar {
+		float: right;
+		width: 29%;
+	}
+	.footer {
+		clear: both;
+		float: left;
+	}
+}
+@media all and (max-width:900px) {
+	#searchform {
+		clear: both;
+		position: relative;
+	}
+	#searchform div {
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		background: #eee;
+		margin: 5px 0;
+		padding: 5px;
+	}
+	#searchform div input[type="text"] {
+		margin: 0;
+	}
+}
+@media all and (min-width:900px) {
+	#searchform {
+		position: absolute;
+		right: 0;
+		top: 5px;
+	}
+}
+@media all and (min-width:1040px) {
+	.header {
+		padding-top: 25px;
+	}
+	#searchform {
+		top: 25px;
+	}
+	.hfeed,
+	.front-main {
+		width: 700px;
+	}
+	.sidebar {
+		width: 300px;
+	}
+}
+/* end Media Queries */

@@ -13,6 +13,13 @@ require_once('inc/settings.inc');
 // Register stylesheets
 function fokus_add_css() {
 	if ( !is_admin() ) {
+	  wp_enqueue_style( 'fokus-reset', FOKUS_THEMEURL . '/style/reset.css' );
+	  wp_enqueue_style( 'fokus-base', FOKUS_THEMEURL . '/style.css' );
+	  wp_enqueue_style( 'fokus-layout', FOKUS_THEMEURL . '/style/layout.css' );
+	  wp_enqueue_style( 'fokus-menu', FOKUS_THEMEURL . '/style/menu.css' );
+	  wp_enqueue_style( 'fokus-widgets', FOKUS_THEMEURL . '/style/widgets.css' );
+	  wp_enqueue_style( 'fokus-posts', FOKUS_THEMEURL . '/style/posts.css' );
+	  wp_enqueue_style( 'fokus-comments', FOKUS_THEMEURL . '/style/comments.css' );
 		wp_enqueue_style( 'fokus-fonts', FOKUS_THEMEURL . '/style/fonts.css' );
 	}
 }

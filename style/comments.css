@@ -1,0 +1,71 @@
+/** Comments */
+#comments,
+#respond {
+	background: #eee;
+	margin: 0 0 10px 0;
+	padding: 5px;
+}
+#respond {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#comments h3,
+#respond h3 {
+	background: #1b1818;
+	background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0.4, rgb(27,24,24)),
+			color-stop(0.6, rgb(48,44,45))
+	);
+	background-image: -moz-linear-gradient(
+			center bottom,
+			rgb(27,24,24) 40%,
+			rgb(48,44,45) 60%
+	);
+	color: #fff;
+	font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif;
+	padding: 5px;
+}
+
+#respond label { margin: 0 0 0 5px; }
+#respond p { margin: 5px 0; }
+
+#commentform {
+	background: #fff;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.45, rgb(255,255,255)),
+		color-stop(1, rgb(225,225,225))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 45%,
+		rgb(225,225,225) 100%
+	);
+	padding: 5px;
+}
+#commentform textarea {
+	width: 97%;
+	height: 70px;
+}
+
+.commentlist { font-size: 12px; padding: 5px; }
+
+.comment-author, .comment-author .fn { font: 14px/150% 'ArvoRegular', Garamond, "Times New Roman", serif; }
+
+.comment-meta {
+	color: #555;
+	font: normal normal 9px/100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	word-wrap: break-word;
+}
+
+.comment-meta a {
+	color: #fff;
+	background: #aaa;
+	padding: 0 2px;
+}
+/* end Comments */

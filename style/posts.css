@@ -1,0 +1,95 @@
+/** Posts */
+.posts {
+	background: #ddd;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.3, rgb(255,255,255)),
+		color-stop(0.7, rgb(221,221,221))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 30%,
+		rgb(221,221,221) 70%
+	);
+	overflow: hidden;
+	padding: 5px 5px 0 5px;
+}
+.posts .post,
+.posts .page {
+	margin: 0 0 5px 0;
+	overflow: hidden;
+}
+.posts .post.single,
+.posts .page.single {
+	background: #eee;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(255,255,255)),
+		color-stop(1, rgb(238,238,238))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 50%,
+		rgb(238,238,238) 100%
+	);
+}
+
+.cat-info {
+	overflow: hidden;
+	margin: 0 0 5px;
+}
+.cat-info .cat-title { clear: none; }
+
+.cat-title,
+.posts .post .entry-title,
+.posts .page .entry-title { font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif; }
+.cat-title,
+.posts .post.single .entry-title,
+.posts .page.single .entry-title { font-size: 25px; }
+.posts .post .entry-title a,
+.posts .page .entry-title a { color: #000; }
+.posts .post .entry-title a:hover,
+.posts .page .entry-title a:hover { color: #e02802; }
+
+.posts .post .entry-meta,
+.posts .page .entry-meta {
+	color: #555;
+	font: normal normal 9px/200% "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	word-wrap: break-word;
+}
+
+.posts .post.single .entry-content,
+.posts .page.single .entry-content { font-size: 13px; }
+
+.cat-info img,
+.posts .post > a,
+.posts .page > a { float: left; margin: 0 10px 0 0; }
+.posts .post > a img,
+.posts .page > a img { display: block; }
+.posts .post h2,
+.posts .page h2 { clear: none; }
+
+.posts-by-tags {
+  background: #eee;
+  clear: both;
+  float: right;
+  margin: 0 0 10px 10px;
+  width: 220px;
+}
+.posts-by-tags li { padding: 0 5px; }
+
+.issuelist { overflow: hidden; }
+.issuelist li {
+  float: left;
+  margin: 0 20px 20px 0;
+  text-align: center;
+}
+.issuelist img {
+  display: block;
+}
+/* end Posts */
