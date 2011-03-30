@@ -438,6 +438,16 @@ input[type="submit"] {
   width: 220px;
 }
 .posts-by-tags li { padding: 0 5px; }
+
+.issuelist { overflow: hidden; }
+.issuelist li {
+  float: left;
+  margin: 0 20px 20px 0;
+  text-align: center;
+}
+.issuelist img {
+  display: block;
+}
 /* end Posts */
 
 /** Comments */
