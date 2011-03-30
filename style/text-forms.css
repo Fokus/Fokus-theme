@@ -1,0 +1,111 @@
+/** Text */
+a:focus { outline: 1px dotted invert; }
+hr { border: 0 #ccc solid;border-top-width: 1px;clear: both;height: 0; }
+h1 { font-size: 25px; }
+h2 { font-size: 23px; }
+h3 { font-size: 21px; }
+h4 { font-size: 19px; }
+h5 { font-size: 17px; }
+h6 { font-size: 15px; }
+p { margin: 0 0 20px 0; }
+/* end Text */
+
+/* Links */
+a         { text-decoration: none; }
+a:link    { color: #e02802; }
+a:visited { color: #e02802; }
+a:hover,
+a:focus   { color: #e02802; }
+a:active  { color: #e02802; }
+/* end Links */
+
+/** Forms */
+input[type="text"],
+input[type="submit"],
+input[type="password"] {
+	line-height: normal !important;
+	padding: 3px;
+}
+input[type="text"],
+input[type="password"] {
+	background: #fff;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.45, rgb(255,255,255)),
+		color-stop(1, rgb(225,225,225))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 45%,
+		rgb(225,225,225) 100%
+	);
+	border: 1px solid #ccc;
+	margin: 0;
+}
+textarea {
+	background: #fff;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.85, rgb(255,255,255)),
+		color-stop(1, rgb(225,225,225))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 85%,
+		rgb(225,225,225) 100%
+	);
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 3px;
+}
+input[type="submit"]::-moz-focus-inner {
+	border: none;
+}
+input[type="submit"] {
+	background: #000;
+	border: 1px solid #000;
+	color: #eee;
+	margin: 0;
+}
+/* end Forms */
+
+/** Odd / Even listings */
+.posts .post:nth-child(even),
+.commentlist li:nth-child(even) {
+	background: #eee;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(221,221,221)),
+		color-stop(1, rgb(238,238,238))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(221,221,221) 50%,
+		rgb(238,238,238) 100%
+	);
+	padding: 5px;
+}
+.posts .post:nth-child(odd),
+.commentlist li:nth-child(odd) {
+	background: #fff;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(250,250,250)),
+		color-stop(1, rgb(239,239,239))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(250,250,250) 50%,
+		rgb(239,239,239) 100%
+	);
+	padding: 5px;
+}
+/* end Odd / Even listings */
