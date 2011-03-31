@@ -122,10 +122,6 @@
 								<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'fokus' ), 'after' => '</div>' ) ); ?>
 								<?php comments_template(); ?>
 							</div><!-- .entry-content -->
-						<?php else : ?>
-							<div class="entry-summary">
-								<?php the_excerpt(); ?>
-							</div><!-- .entry-summary -->
 
 							<div class="nav">
 								<?php if (get_previous_posts_link()): ?>
@@ -136,6 +132,10 @@
 								<?php endif; ?>
 							</div><!-- .nav -->
 
+						<?php else : ?>
+							<div class="entry-summary">
+								<?php the_excerpt(); ?>
+							</div><!-- .entry-summary -->
 						<?php endif; ?>
 					</div>
 
