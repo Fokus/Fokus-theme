@@ -27,7 +27,7 @@
 		<div class="header">
 			<div class="site-info">
 				<?php $heading_tag = ( is_home() || is_front_page() || !is_singular() ) ? 'h1' : 'div'; ?>
-				<<?php echo $heading_tag; ?> class="title">
+				<<?php echo $heading_tag; ?> class="title <?php if ( get_header_image() ) : echo('header-image'); else : echo('no-header-image'); endif ?>">
 					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 						<?php if ( get_header_image() ) : ?>
 							<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="<?php bloginfo( 'name' ); ?>" />

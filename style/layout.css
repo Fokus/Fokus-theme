@@ -23,16 +23,16 @@ body {
 .header .title {
 	border-left: 24px solid #e02802;
 	font-size: 24px;
-	height: 24px;
 	padding: 0 0 0 4px;
 	text-transform: uppercase;
+}
+.header .title.header-image {
+	border-left: 0;
+	padding: 0;
 }
 .header .title a {
 	color: #000;
 	white-space: nowrap;
-}
-.header #site-description {
-	font-size: 10px;
 }
 .front-top,
 .hfeed {

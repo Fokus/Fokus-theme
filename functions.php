@@ -120,7 +120,12 @@ function fokus_setup() {
 	if ( ! defined( 'HEADER_TEXTCOLOR' ) )
 		define( 'HEADER_TEXTCOLOR', '' );
 
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'fokus_header_logo_width', 100 ) );
+	if ( ! defined( 'HEADER_IMAGE' ) )
+		define( 'HEADER_IMAGE', '' );
+
+	if ( ! defined( 'HEADER_IMAGE_WIDTH' ) )
+		define( 'HEADER_IMAGE_WIDTH', apply_filters( 'fokus_header_logo_width', 100 ) );
+	if ( ! defined( 'HEADER_IMAGE_HEIGHT' ) )
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'fokus_header_logo_height', 50 ) );
 
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );

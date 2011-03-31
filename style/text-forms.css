@@ -3,6 +3,11 @@ body {
 	font: 12px/22px Garamond, "Times New Roman", serif;
 	color: #000;
 }
+
+.header #site-description {
+	font-size: 10px;
+}
+
 a:focus { outline: 1px dotted invert; }
 hr { border: 0 #ccc solid;border-top-width: 1px;clear: both;height: 0; }
 h1 { font-size: 25px; }
