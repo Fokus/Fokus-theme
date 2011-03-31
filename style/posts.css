@@ -45,11 +45,9 @@
 .cat-info .cat-title { clear: none; }
 
 .cat-title,
-.posts .post .entry-title,
-.posts .page .entry-title { font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif; }
+.hentry .entry-title { font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif; }
 .cat-title,
-.posts .post.single .entry-title,
-.posts .page.single .entry-title { font-size: 25px; }
+.hentry.single .entry-title { font-size: 25px; }
 .posts .post .entry-title a,
 .posts .page .entry-title a { color: #000; }
 .posts .post .entry-title a:hover,

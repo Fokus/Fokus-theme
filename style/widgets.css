@@ -50,7 +50,7 @@
 	);
 }
 .sidebar .widget-container { color: #ccc; }
-.sidebar .widget-container a {
+.sidebar .widget-container .entry-title {
 	color: #fff;
 	font: normal bold 9px/100% "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
