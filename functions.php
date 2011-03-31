@@ -225,30 +225,3 @@ $fokus_colors = get_settings( FOKUS_THEMENAME . '_settings' );
 if ($fokus_colors) {
 	add_action('wp_head', 'fokus_custom_colors');
 }
-
-/**
- * Custom function to get related post content
- */
-function fokus_get_related($id) {
-	$tags = get_the_tags($id);
-	if ($tags) :
-		$current[] = $id;
-		foreach ($tags as $tag) :
-			$t = $tag->slug;
-			$posts = get_posts( array('numberposts' => 5, 'tag' => $t, 'post__not_in' => $current ) );
-			if ($posts) :
-?>
-	<div class="posts-by-tags widget-container">
-			<h2 class="widget-title">Mer om <a href="<?php echo get_tag_link($tag->term_id); ?>" title="Artiklar om <?php echo $tag->name ?>"><?php echo $tag->name ?></a></h2>
-			<?php foreach ($posts as $post) : ?>
-			<ul>
-				<li>
-					<a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a>
-				</li>
-			</ul>
-			<?php endforeach; ?>
-	</div>
-<?php endif;
-		endforeach;
-	endif;
-}
