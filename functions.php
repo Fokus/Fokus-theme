@@ -73,14 +73,29 @@ function fokus_setup() {
 			'description' => __( 'Widgets in the secondary menu of every page', 'fokus' ),
 		) + $global,
 		array(
+			'id' => 'sidebar',
+			'name' => __( 'Sidebar', 'fokus' ),
+			'description' => __( 'The right sidebar of every page', 'fokus' ),
+		) + $global,
+		array(
+			'id' => 'front-top',
+			'name' => __( 'Front, top', 'fokus' ),
+			'description' => __( 'The top area of the frontpage', 'fokus' ),
+		) + $global,
+		array(
 			'id' => 'front-main',
 			'name' => __( 'Front, main', 'fokus' ),
 			'description' => __( 'The main area of the frontpage', 'fokus' ),
 		) + $global,
 		array(
-			'id' => 'sidebar',
-			'name' => __( 'Sidebar', 'fokus' ),
-			'description' => __( 'The right sidebar of every page', 'fokus' ),
+			'id' => 'front-middle',
+			'name' => __( 'Front, middle', 'fokus' ),
+			'description' => __( 'The middle area of the frontpage', 'fokus' ),
+		) + $global,
+		array(
+			'id' => 'middle',
+			'name' => __( 'Middle column', 'fokus' ),
+			'description' => __( 'The middle area of all pages but the front page', 'fokus' ),
 		) + $global,
 		array(
 			'id' => 'footer',

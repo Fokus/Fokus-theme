@@ -3,21 +3,21 @@ div.widget-liquid-left {
 	float: left;
 	margin: 0;
 	position: relative;
-	width: 300px;
+	width: 400px;
 }
 div#widgets-left {
 	margin: 0 auto;
-	width: 285px;
+	width: 385px;
 }
 div.widget-liquid-right {
 	clear: right;
 	float: right;
-	margin-left: -325px;
+	margin-left: -425px;
 	width: 100%;
 }
 div#widgets-right {
 	margin-right: 5px;
-	margin-left: 325px;
+	margin-left: 425px;
 	width: auto;
 }
 div#widgets-right .widget {
@@ -29,9 +29,22 @@ div#widgets-right .widgets-holder-wrap {
 	width: 100%;
 }
 div#widgets-right .widgets-holder-wrap:nth-child(2) {
-	width: 49%;
+	width: 32%;
+	float: right;
 }
 div#widgets-right .widgets-holder-wrap:nth-child(3) {
-	width: 49%;
-	float: right;
+	width: 66%;
+}
+div#widgets-right .widgets-holder-wrap:nth-child(4) {
+	clear: left;
+	width: 33%;
+	margin-right: 1%;
+}
+div#widgets-right .widgets-holder-wrap:nth-child(5) {
+	width: 32%;
+}
+div#widgets-right .widgets-holder-wrap:nth-child(6) {
+	clear: left;
+	width: 32%;
+	margin-left: 34%;
 }

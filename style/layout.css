@@ -15,7 +15,7 @@ body {
 	padding: 5px 0 0 0;
 	position: relative;
 	width: 100%;
-	float: left;
+	float: right;
 }
 .header .site-info {
 	margin: 0 10px 0 0;
@@ -34,8 +34,10 @@ body {
 .header #site-description {
 	font-size: 10px;
 }
-.sidebar {
-	overflow: hidden;
+.front-top,
+.hfeed {
+	clear: both;
+	margin-bottom: 5px;
 }
 .footer {
 	margin: 10px 0 0 0;
@@ -50,11 +52,13 @@ body {
 	}
 }
 @media all and (min-width:500px) and (max-width:700px) {
+	.middle .widget-container,
 	.sidebar .widget-container {
 		clear: left;
 		float: left;
 		width: 47%;
 	}
+	.middle .widget-container:nth-child(odd),
 	.sidebar .widget-container:nth-child(odd) {
 		clear: right;
 		float: right;
@@ -74,14 +78,23 @@ body {
 	.header .site-menu {
 		float: left;
 	}
-	.hfeed,
-	.front-main {
+	.front-top {
 		float: left;
 		width: 69%;
 	}
+	.hfeed,
+	.front-main {
+		float: left;
+		width: 49%;
+		margin-right: 2%;
+	}
+	.middle {
+		float: left;
+		width: 18%;
+	}
 	.sidebar {
-		float: right;
-		width: 29%;
+		margin-left: 70%;
+		clear: right;
 	}
 	.footer {
 		clear: both;
@@ -119,12 +132,19 @@ body {
 	#searchform {
 		top: 25px;
 	}
-	.hfeed,
-	.front-main {
+	.front-top {
 		width: 700px;
 	}
+	.hfeed,
+	.front-main {
+		width: 460px;
+		margin-right: 20px;
+	}
+	.middle {
+		width: 220px;
+	}
 	.sidebar {
-		width: 300px;
+		margin-left: 720px;
 	}
 }
 /* end Media Queries */

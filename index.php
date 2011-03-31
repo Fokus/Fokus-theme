@@ -53,15 +53,18 @@
 			<?php get_search_form(); ?>
 		</div><!-- .header -->
 
-		<?php
-		if ( have_posts() ) :
-			if ( is_front_page() && is_active_sidebar( 'front-main' ) ):
-		?>
+		<?php if ( is_front_page() && is_active_sidebar( 'front-top' ) ): ?>
+		<div class="front-top">
+			<?php dynamic_sidebar( 'front-top' ); ?>
+		</div>
+		<?php endif; ?>
+		<?php if ( is_front_page() && is_active_sidebar( 'front-main' ) ): ?>
 			<div class="front-main">
 				<?php dynamic_sidebar( 'front-main' ); ?>
 			</div>
 		<?php
-			else:
+		else:
+			if ( have_posts() ) :
 				$heading_tag = ($heading_tag == 'h1' ? 'h2' : 'h1');
 				?><div class="hfeed">
 					<?php if ( is_archive() ): ?>
@@ -72,9 +75,6 @@
 							<h1 class="cat-title"><?php single_cat_title(); ?></h1>
 							<?php echo category_description(); ?>
 						</div>
-					<?php endif; ?>
-					<?php if ( is_single() ) : ?>
-						<?php fokus_get_related( get_the_ID() ); ?>
 					<?php endif; ?>
 						<div class="posts"><?php
 				while ( have_posts() ) :
@@ -145,6 +145,16 @@
 			endif;
 		endif;
 		?>
+
+		<?php if ( is_front_page() && is_active_sidebar( 'front-middle' ) ): ?>
+		<div class="middle">
+			<?php dynamic_sidebar( 'front-middle' ); ?>
+		</div>
+		<?php elseif ( is_active_sidebar( 'middle' ) ): ?>
+		<div class="middle">
+			<?php dynamic_sidebar( 'middle' ); ?>
+		</div>
+		<?php endif; ?>
 
 		<?php if ( is_active_sidebar( 'sidebar' ) ): ?>
 		<div class="sidebar">

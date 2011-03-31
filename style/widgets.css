@@ -23,6 +23,11 @@
 	padding: 5px;
 }
 
+.middle .widget-container {
+  background: #eee;
+}
+.middle li { padding: 0 5px; }
+
 .sidebar .widget-container {
 	background: #111;
 }
