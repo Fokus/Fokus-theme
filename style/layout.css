@@ -1,8 +1,6 @@
 /** Layout, regions */
 body {
 	background: url("../images/bg-default.png") #fff;
-	color: #000;
-	font: 12px/22px Garamond, "Times New Roman", serif;
 	min-width: 320px;
 }
 .evil-wrapper {
