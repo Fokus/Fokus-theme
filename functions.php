@@ -13,7 +13,6 @@ require_once('inc/settings.inc');
 // Register stylesheets
 function fokus_add_css() {
 	if ( !is_admin() ) {
-		wp_enqueue_style( 'fokus-base', FOKUS_THEMEURL . '/style.css' );
 	  wp_enqueue_style( 'fokus-reset', FOKUS_THEMEURL . '/style/reset.css' );
 	  wp_enqueue_style( 'fokus-layout', FOKUS_THEMEURL . '/style/layout.css' );
 		wp_enqueue_style( 'fokus-text-forms', FOKUS_THEMEURL . '/style/text-forms.css' );
