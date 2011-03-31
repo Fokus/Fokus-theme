@@ -1,7 +1,7 @@
 <?php
 
-define( 'FOKUS_THEMEURL', get_bloginfo( 'template_directory' ) );
-define( 'FOKUS_THEMENAME', "fokus" );
+define( 'FOKUS_THEMEURL', get_template_directory_uri() );
+define( 'FOKUS_THEMENAME', 'fokus' );
 
 if ( is_admin() ) {
 	wp_enqueue_style( 'fonts', FOKUS_THEMEURL . '/style/admin.css' );
@@ -24,7 +24,7 @@ function fokus_add_css() {
 	}
 }
 
-add_action( 'wp_print_styles', 'fokus_add_css' );
+add_action( 'after_setup_theme', 'fokus_add_css' );
 
 // Register javascript
 function fokus_add_js() {
