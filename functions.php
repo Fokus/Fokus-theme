@@ -61,9 +61,9 @@ function fokus_setup() {
 	// Register sidebars
 	$global = array(
 		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
+		'after_widget' => '</div></div>',
 		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'after_title' => '</h3><div class="widget-content">',
 	);
 
 	$zones = array(
