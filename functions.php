@@ -60,9 +60,9 @@ function fokus_setup() {
 
 	// Register sidebars
 	$global = array(
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s"><div class="widget-content">',
 		'after_widget' => '</div></div>',
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '</div><h3 class="widget-title">',
 		'after_title' => '</h3><div class="widget-content">',
 	);
 
