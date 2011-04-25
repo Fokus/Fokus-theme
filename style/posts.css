@@ -72,13 +72,13 @@
 .posts .post h2,
 .posts .page h2 { clear: none; }
 
-.issuelist { overflow: hidden; }
-.issuelist li {
+.hfeed .issuelist { overflow: hidden; }
+.hfeed .issuelist li {
   float: left;
   margin: 0 20px 20px 0;
   text-align: center;
 }
-.issuelist img {
+.hfeed .issuelist img {
   display: block;
 }
 /* end Posts */
