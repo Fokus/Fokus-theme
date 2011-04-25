@@ -15,12 +15,9 @@
 .primary-menu li { line-height: 20px; }
 .secondary-menu > .menu,
 .secondary-menu > .menu > li,
-.secondary-menu .widget-title { line-height: 17px; }
+.secondary-menu .widget-container .widget-title { line-height: 17px; }
 .primary-menu li a { display: block; border-right: 1px solid #fff; margin: 0 0 1px 0; padding: 0 7px; text-transform: uppercase; white-space: nowrap; }
-.secondary-menu > .menu > li a,
-.secondary-menu .widget-title { display: block; border-right: 1px solid #fff; margin: 0 0 1px 0; padding: 0 9px; white-space: nowrap; }
-.primary-menu li a,
-.secondary-menu .widget-title {
+.primary-menu li a {
 	background: #1b1818;
 	background-image: -webkit-gradient(
 		linear,
@@ -38,15 +35,28 @@
 }
 .primary-menu li.current-menu-item a { background: #e02802; color: #fff; }
 .primary-menu li a:hover { background: #444; color: #ddd; }
-.secondary-menu > .menu > li a { background: #ddd; color: #000; }
+.secondary-menu .widget-container .widget-title,
+.secondary-menu > .menu > li a {
+	background: #ddd;
+	color: #000;
+	font-weight: normal;
+	text-transform: none;
+	padding: 0;
+	display: block;
+	border-right: 1px solid #fff;
+	margin: 0 0 1px 0;
+	padding: 0 9px;
+	white-space: nowrap;
+}
+.secondary-menu .widget-container.toggled .widget-title,
 .secondary-menu > .menu > li.current-menu-item a { background: #ffdf12; color: #000; }
+.secondary-menu .widget-container .widget-title:hover,
 .secondary-menu > .menu > li a:hover { color: #e02802; }
 .secondary-menu .widget-container {
   margin: 0;
   padding: 0;
   background: none;
 }
-.secondary-menu .widget-title { color: #fff; }
 .secondary-menu .widget-content {
   display: block;
   position: absolute;
