@@ -36,7 +36,6 @@ function fokus_add_js() {
 
 add_action( 'wp_enqueue_scripts', 'fokus_add_js' );
 
-
 // Load translations
 load_theme_textdomain( 'fokus', TEMPLATEPATH . '/languages' );
 

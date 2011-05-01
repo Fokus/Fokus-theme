@@ -72,13 +72,20 @@
 .posts .post h2,
 .posts .page h2 { clear: none; }
 
+.footer .issuelist,
 .hfeed .issuelist { overflow: hidden; }
+.footer .issuelist li,
 .hfeed .issuelist li {
   float: left;
   margin: 0 20px 20px 0;
   text-align: center;
 }
+.footer .issuelist img,
 .hfeed .issuelist img {
   display: block;
+}
+.footer .view-all-issues {
+  float: none;
+  clear: both;
 }
 /* end Posts */
