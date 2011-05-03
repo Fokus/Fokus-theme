@@ -7,8 +7,22 @@ if ( is_admin() ) {
 	wp_enqueue_style( 'fonts', FOKUS_THEMEURL . '/style/admin.css' );
 }
 
+// Create the documentation panel and include readme.txt
+add_action( 'admin_menu', 'fokus_add_page' );
+
+function fokus_add_page() {
+  add_dashboard_page( __( 'Documentation' ), __( 'Documentation' ), 8, 'fokus_help', 'fokus_help_page');
+}
+
+function fokus_help_page() { ?>
+	<div class="wrap fokus-documentation">
+		<?php screen_icon(); echo '<h2>Documentation</h2>';
+		include( 'readme.txt' ); ?>
+	</div>
+<?php }
+
 // Include color settings page
-require_once('inc/settings.inc');
+require_once( 'inc/settings.inc' );
 
 // Register stylesheets
 function fokus_add_css() {

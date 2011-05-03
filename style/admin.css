@@ -1,3 +1,18 @@
+/* Fokus documentation panel */
+.fokus-documentation ul {
+  margin-left: 20px;
+  padding-left: 10px;
+  list-style-type: disc;
+}
+
+.fokus-documentation img {
+  width: auto;
+  max-height: 400px;
+  margin: 1em 0;
+  border: 5px solid #000;
+}
+
+/* Widgets */
 div.widget-liquid-left {
 	clear: left;
 	float: left;
