@@ -18,7 +18,9 @@
 		rgb(48,44,45) 60%
 	);
 	color: #fff;
-	font: normal bold 9px/100% "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 9px;
+	line-height: 100%;
+	font-weight: bold;
 	text-transform: uppercase;
 	padding: 5px;
 }
@@ -30,10 +32,6 @@
 
 .sidebar .widget-container {
 	background: #111;
-}
-.sidebar .widget-container .widget-title {
-	font: 15px/150% 'ArvoRegular', Garamond, "Times New Roman", serif;
-	text-transform: none;
 }
 .sidebar .widget-container > ul,
 .sidebar .widget-container ul li {
