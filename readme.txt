@@ -10,27 +10,19 @@
 
 */ ?>
 
+<p>Fokus theme is a powerful magazine template brought to you, and used by, Swedish magazine Fokus. It sports a very flexible layout, customizable colours and a menu with a twist, to mention some of the neat features. And of course you also get all of the WordPress goodness you know and love: backgrounds, header images and more.</p>
+
+<p>Fokus theme is currently in BETA. We'd be very grateful if you took the time to try it out and reported any problems in the issue queue. Thanks for helping us build an awesome free magazine template!</p>
+
 <h2>Table of contents</h2>
 <ul class="tableofcontents">
-	<li><a href="#whatisfokustheme">What is Fokus theme?</a></li>
-	<li><a href="#howisfokusthemesupported">How is Fokus theme supported, and what does that mean for you?</a></li>
 	<li><a href="#gettingstartedbuildingyoursite">Getting started building your site</a></li>
 	<li><a href="#recommendedplugins">Recommended plugins</a></li>
 	<li><a href="#featurebreakdown">Feature breakdown</a></li>
 	<li><a href="#conclusion">Conclusion and the future</a></li>
 </ul>
 
-<h2 id="whatisfokustheme">What is Fokus theme?</h2>
-
-<p>Fokus theme is a powerful magazine template brought to you, and used by, Swedish magazine Fokus. It sports a very flexible layout, customizable colours and a menu with a twist, to mention some of the neat features. And of course you also get all of the WordPress goodness you know and love: backgrounds, header images and more.</p>
-
-<p>Fokus theme is currently in BETA. We'd be very grateful if you took the time to try it out and reported any problems in the issue queue. Thanks for helping us build an awesome free magazine template!</p>
-
-<h2 id="howisfokusthemesupported">How is Fokus theme supported, and what does that mean for you?</h2>
-
-<p>[Jonatan får skriva om varför fokus har valt att göra så här och hur det finansieras]</p>
-
-<h2 id="gettingstartedbuildingyoursite">Getting started building your site</h3>
+<h2 id="gettingstartedbuildingyoursite">Getting started building your site</h2>
 
 <p>Fokus theme works out of the box as a standard blog template, but with the help of a few plugins it really begins to shine. We'll begin by doing a basic site building walkthrough to get you started. After that we'll take a look at recommended plugins and how they can augment your online magazine, to finish up with a detailed look at the different features Fokus theme is equipped with.</p>
 
