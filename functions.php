@@ -34,7 +34,6 @@ function fokus_add_css() {
 		wp_enqueue_style( 'fokus-widgets', FOKUS_THEMEURL . '/style/widgets.css' );
 		wp_enqueue_style( 'fokus-posts', FOKUS_THEMEURL . '/style/posts.css' );
 		wp_enqueue_style( 'fokus-comments', FOKUS_THEMEURL . '/style/comments.css' );
-		// wp_enqueue_style( 'fokus-fonts', FOKUS_THEMEURL . '/style/fonts.css' );
 	}
 }
 
