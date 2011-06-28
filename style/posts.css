@@ -90,11 +90,33 @@
   clear: both;
 }
 
+.gallery-caption,
 .wp-caption-text {
   font-size: 0.8em;
   font-style: italic;
 }
 
+.alignright {
+  float: right;
+  margin: 0 0 5px 5px;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+
+/* 
+  wordpress.org's automatic check requires these to be here even though
+  we don't want them to be styled differently - hence their emptiness.
+*/
+.sticky {}
 .wp-caption {}
+.bypostauthor {}
 
 /* end Posts */
