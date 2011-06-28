@@ -90,9 +90,11 @@
   clear: both;
 }
 
-.wp-caption {
+.wp-caption-text {
   font-size: 0.8em;
   font-style: italic;
 }
+
+.wp-caption {}
 
 /* end Posts */
