@@ -12,7 +12,7 @@
 		else:
 			if ( have_posts() ) :
 				$heading_tag = ($heading_tag == 'h1' ? 'h2' : 'h1');
-				?><div class="hfeed">
+				?><div class="hfeed" role="main">
 					<?php if ( is_archive() ): ?>
 						<div class="cat-info">
 							<?php if ( function_exists( 'fokus_taxonomy_image' ) ):
@@ -26,7 +26,7 @@
 				while ( have_posts() ) :
 					the_post();
 					?>
-					<div id="post-<?php the_ID(); ?>" <?php post_class( is_single() ? 'single' : '' ); ?>>
+					<div role="article" id="post-<?php the_ID(); ?>" <?php post_class( is_single() ? 'single' : '' ); ?>>
 						<?php
 							// Post thumbnails
 							if ( has_post_thumbnail() ):
@@ -98,17 +98,17 @@
 		?>
 
 		<?php if ( is_front_page() && is_active_sidebar( 'front-middle' ) ): ?>
-			<div class="middle">
+			<div class="middle" role="complementary">
 				<?php dynamic_sidebar( 'front-middle' ); ?>
 			</div>
 		<?php elseif ( is_active_sidebar( 'middle' ) ): ?>
-			<div class="middle">
+			<div class="middle" role="complementary">
 				<?php dynamic_sidebar( 'middle' ); ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if ( is_active_sidebar( 'sidebar' ) ): ?>
-			<div class="sidebar">
+			<div class="sidebar" role="complementary">
 				<?php dynamic_sidebar( 'sidebar' ); ?>
 			</div>
 		<?php endif;

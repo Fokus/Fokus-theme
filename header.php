@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -24,7 +25,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<div class="evil-wrapper">
-		<div class="header">
+		<div class="header" role="banner">
 			<div class="site-info">
 				<?php $heading_tag = ( is_home() || is_front_page() || !is_singular() ) ? 'h1' : 'div'; ?>
 				<<?php echo $heading_tag; ?> class="title <?php if ( get_header_image() ) : echo('header-image'); else : echo('no-header-image'); endif ?>">
@@ -38,7 +39,7 @@
 				</<?php echo $heading_tag; ?>>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 			</div><!-- .site-info -->
-			<div class="site-menu">
+			<div class="site-menu" role="navigation">
 				<?php wp_nav_menu( array( 'container_class' => 'primary-menu', 'menu_class' => 'primary-menu', 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
 				<?php
 					$sec_menu = wp_nav_menu( array( 'container' => FALSE, 'theme_location' => 'secondary', 'depth' => 1, 'fallback_cb' => FALSE, 'echo' => FALSE ) );
