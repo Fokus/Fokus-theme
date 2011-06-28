@@ -11,7 +11,7 @@ if ( is_admin() ) {
 add_action( 'admin_menu', 'fokus_add_page' );
 
 function fokus_add_page() {
-  add_dashboard_page( __( 'Documentation' ), __( 'Documentation' ), 8, 'fokus_help', 'fokus_help_page');
+  add_dashboard_page( __( 'Documentation' ), __( 'Documentation' ), 'administrator', 'fokus_help', 'fokus_help_page');
 }
 
 function fokus_help_page() { ?>
