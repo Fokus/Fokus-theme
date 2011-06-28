@@ -56,9 +56,14 @@
 							</span>
 							<span class="published">
 								<span class="value-title" title="<?php esc_attr_e(get_the_date('c')); ?>">
-									<?php echo get_the_date(); ?> <?php the_time(); ?>
+									<?php echo get_the_date(); ?> <?php the_time(); ?>.
 								</span>
 							</span>
+							<?php if(get_the_tags()): ?>
+								<span class="tags">
+									Tagged as: <?php the_tags( '', ', ', '.' ); ?> 
+								</span>
+							<?php endif; ?>
 							<?php edit_post_link( __( 'Edit this' ), '<span class="edit">', '</span>' ); ?>
 						</div><!-- .entry-meta -->
 
