@@ -11,7 +11,7 @@ if ( is_admin() ) {
 add_action( 'admin_menu', 'fokus_add_page' );
 
 function fokus_add_page() {
-  add_dashboard_page( __( 'Documentation' ), __( 'Documentation' ), 'administrator', 'fokus_help', 'fokus_help_page');
+  add_theme_page( __( 'Documentation' ), __( 'Documentation' ), 'administrator', 'fokus_help', 'fokus_help_page');
 }
 
 function fokus_help_page() { ?>
@@ -245,7 +245,7 @@ function fokus_custom_colors() {
 }
 endif;
 
-$fokus_colors = get_settings( FOKUS_THEMENAME . '_settings' );
+$fokus_colors = get_option( FOKUS_THEMENAME . '_settings' );
 if ($fokus_colors) {
 	add_action('wp_head', 'fokus_custom_colors');
 }
