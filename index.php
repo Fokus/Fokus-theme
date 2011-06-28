@@ -61,7 +61,7 @@
 							</span>
 							<?php if(get_the_tags()): ?>
 								<span class="tags">
-									Tagged as: <?php the_tags( '', ', ', '.' ); ?> 
+									Tagged as: <?php the_tags( '', ', ', '.' ); ?>
 								</span>
 							<?php endif; ?>
 							<?php edit_post_link( __( 'Edit this' ), '<span class="edit">', '</span>' ); ?>

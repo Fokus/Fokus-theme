@@ -21,6 +21,15 @@ function fokus_help_page() { ?>
 	</div>
 <?php }
 
+function fokus_theme_setup() {
+  global $content_width;
+  if (!isset($content_width)) {
+    $content_width = 1020;
+  }
+}
+
+add_action('after_setup_theme','fokus_theme_setup');
+
 // Include color settings page
 require_once( 'inc/settings.inc' );
 
@@ -41,10 +50,13 @@ add_action( 'after_setup_theme', 'fokus_add_css' );
 
 // Register javascript
 function fokus_add_js() {
-	if ( !is_admin() ) {
+	if ( !is_admin() ) :
 		wp_enqueue_script( 'placeholder', FOKUS_THEMEURL . '/js/jquery.textPlaceholder.js', array( 'jquery' ) );
 		wp_enqueue_script( 'fokus-main', FOKUS_THEMEURL . '/js/jquery.fokus.js', array( 'jquery', 'placeholder' ), false, true );
-	}
+		if ( is_singular() ) :
+			wp_enqueue_script( 'comment-reply' );
+		endif;
+	endif;
 }
 
 add_action( 'wp_enqueue_scripts', 'fokus_add_js' );
