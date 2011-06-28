@@ -89,4 +89,10 @@
   float: none;
   clear: both;
 }
+
+.wp-caption {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
 /* end Posts */
